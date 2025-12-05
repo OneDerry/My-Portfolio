@@ -41,7 +41,7 @@ const featuredProjects = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto flex max-w-5xl flex-col gap-20 px-6 py-20 md:px-8 md:py-24 lg:py-28">
+      <div className="mx-auto flex max-w-[70%] flex-col gap-20 px-6 py-20 md:px-8 md:py-24 lg:py-28">
         {/* Hero */}
         <section
           id="hero"

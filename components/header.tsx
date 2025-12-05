@@ -12,10 +12,15 @@ export function Header() {
 
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-8">
+      <div className="mx-auto flex max-w-[70%] items-center justify-between px-6 py-4 md:px-8">
         <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
           <span className="h-8 relative w-8 rounded-full border border-border">
-            <Image src="/me.jpeg" alt="Mesiri Olomu" fill className="rounded-full" />
+            <Image
+              src="/me.jpeg"
+              alt="Mesiri Olomu"
+              fill
+              className="rounded-full"
+            />
           </span>
           <span>Mesiri Olomu</span>
         </div>
