@@ -60,7 +60,9 @@
   --accent: #e4e4e7;
   --accent-foreground: #18181b;
   --destructive: #ef4444;
-  --border: #e4e4e7;
+  /* --border: #e4e4e7; */
+  --border: #232324;
+
   --input: #e4e4e7;
   --ring: #3b82f6;
   --chart-1: #3b82f6;
@@ -95,7 +97,9 @@
   --accent: #27272a;
   --accent-foreground: #e4e4e7;
   --destructive: #ef4444;
-  --border: #232324;
+  /* --border: #232324; */
+  --border: #e4e4e7;
+
   --input: #232324;
   --ring: #3b82f6;
   --chart-1: #3b82f6;
@@ -150,4 +154,8 @@
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out both;
   }
+}
+
+* {
+  scroll-behavior: smooth;
 }

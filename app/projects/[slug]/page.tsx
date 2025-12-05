@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = {
@@ -6,6 +7,12 @@ const projects = {
     title: "E-commerce storefront",
     tagline: "Fast, predictable storefront with a focused checkout path.",
     tech: ["React", "TypeScript", "Redux Toolkit"],
+    demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/E-Commerce",
+    thumbnail: "/thumbnail/ecommerce-thumbnail.png",
+    img1: "/ecomm1.png",
+    img2: "/ecomm2.png",
+    img3: "/ecomm3.png",
     learning:
       "Improved understanding of React state management and Next.js routing patterns.",
     solution: [
@@ -28,6 +35,12 @@ const projects = {
     tagline:
       "Operational dashboard with table-first layout and subtle analytics.",
     tech: ["React", "TypeScript"],
+    demoUrl: "https://h-cube-dashboard.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/landing-dashboard",
+    thumbnail: "/thumbnail/dashboard-thumbnail.png",
+    img1: "/land1.png",
+    img2: "/land2.png",
+    img3: "/land3.png",
     learning:
       "Gained experience with dashboard design patterns and data visualization.",
     solution:
@@ -41,6 +54,12 @@ const projects = {
     title: "React Native app",
     tagline: "Mobile client mirroring the web experience with shared logic.",
     tech: ["React Native", "TypeScript"],
+    demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/E-Commerce",
+    thumbnail: "/thumbnail/ecommerce-thumbnail.png",
+    img1: "/ecommm1.png",
+    img2: "/ecommm2.png",
+    img3: "/ecommm3.png",
     solution:
       "Implemented shared business logic between web and mobile platforms to reduce maintenance overhead.",
     learning:
@@ -54,6 +73,12 @@ const projects = {
     title: "Sample project",
     tagline: "Placeholder case study wired from the homepage featured section.",
     tech: ["React", "TypeScript"],
+    demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/E-Commerce",
+    thumbnail: "/thumbnail/ecommerce-thumbnail.png",
+    img1: "/ecommm1.png",
+    img2: "/ecommm2.png",
+    img3: "/ecommm3.png",
     solution:
       "Created a reusable case study template with consistent structure and responsive design.",
     learning:
@@ -118,7 +143,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto flex max-w-5xl flex-col gap-16 px-6 py-20 md:px-8 md:py-24 lg:py-28">
+      <div className="mx-auto flex max-w-[90%] sm:max-w-[70%] flex-col gap-16 px-6 py-20 md:px-8 md:py-24 lg:py-28">
         {/* Header */}
         <header className="space-y-4">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
@@ -140,7 +165,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </span>
             ))}
           </div>
-          <div className="mt-6 h-40 rounded-md border border-dashed border-border bg-card md:h-56" />
+          <div className="relative h-40 md:h-96 rounded-md border border-border bg-background/40 overflow-hidden">
+            <Image
+              src={project?.thumbnail || "/placeholder.png"}
+              alt={`${project?.title || "Project"} thumbnail`}
+              fill
+              className="object-cover"
+            />
+          </div>
         </header>
 
         {/* Overview */}
@@ -234,9 +266,30 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             Screenshots
           </h2>
           <div className="grid gap-3 md:grid-cols-3">
-            <div className="h-32 rounded-md border border-dashed border-border bg-background/40" />
-            <div className="h-32 rounded-md border border-dashed border-border bg-background/40" />
-            <div className="h-32 rounded-md border border-dashed border-border bg-background/40" />
+            <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
+              <Image
+                src={project?.img1 || "/placeholder.png"}
+                alt={`${project?.title || "Project"} thumbnail`}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
+              <Image
+                src={project?.img2 || "/placeholder.png"}
+                alt={`${project?.title || "Project"} thumbnail`}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
+              <Image
+                src={project?.img3 || "/placeholder.png"}
+                alt={`${project?.title || "Project"} thumbnail`}
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
 
@@ -257,18 +310,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             Links
           </h2>
           <div className="flex flex-wrap gap-3 text-sm">
-            <a
-              href="#"
+            <Link
+              href={project?.demoUrl}
               className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               Live demo
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href={project?.repoUrl}
               className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               GitHub repo
-            </a>
+            </Link>
           </div>
         </section>
 

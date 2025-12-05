@@ -1,11 +1,15 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Frontend Developer – Mesiri Olomu",
-  description:
-    "Portfolio of Mesiri Olomu, frontend developer focusing on React, TypeScript, Redux, and React Native.",
-};
+import { useState } from "react";
+// import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
+// export const metadata: Metadata = {
+//   title: "Frontend Developer – Mesiri Olomu",
+//   description:
+//     "Portfolio of Mesiri Olomu, frontend developer focusing on React, TypeScript, Redux, and React Native.",
+// };
 
 const featuredProjects = [
   {
@@ -39,13 +43,21 @@ const featuredProjects = [
 ];
 
 export default function Home() {
+  const [message, setMessage] = useState("");
+
+  const handleSendEmail = () => {
+    const subject = encodeURIComponent("Portfolio contact");
+    const body = encodeURIComponent(`Hi Mesiri,\n\n${message}`);
+    window.location.href = `mailto:mesiri.dev@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto flex max-w-[70%] flex-col gap-20 px-6 py-20 md:px-8 md:py-24 lg:py-28">
+      <div className="mx-auto flex max-w-[90%] sm:max-w-[70%] flex-col gap-20 px-6 py-20 md:px-8 md:py-24 lg:py-28">
         {/* Hero */}
         <section
           id="hero"
-          className="grid gap-10 md:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)] md:items-center animate-fade-in-up"
+          className="grid gap-10 grid-cols-1 sm:grid-cols-2 md:items-center animate-fade-in-up"
         >
           <div className="space-y-6">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
@@ -69,7 +81,7 @@ export default function Home() {
               </a>
               <a
                 href="/Mesiri_Olomu_CV.pdf"
-                className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex items-center justify-center rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 Download CV
               </a>
@@ -110,9 +122,9 @@ export default function Home() {
         {/* About */}
         <section
           id="about"
-          className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)] md:items-start animate-fade-in-up"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:items-start animate-fade-in-up"
         >
-          <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
+          <div className="relative h-56 md:h-64 rounded-md border border-border bg-background/40 overflow-hidden">
             <Image
               src="/dev2.JPG"
               alt="Mesiri Olomu"
@@ -143,7 +155,7 @@ export default function Home() {
         {/* Featured Projects */}
         <section
           id="featured-projects"
-          className="flex flex-col gap-6 animate-fade-in-up"
+          className="flex flex-col gap-6 animate-fade-in-up duration-1000 "
         >
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
@@ -154,9 +166,9 @@ export default function Home() {
             {featuredProjects.map((project) => (
               <article
                 key={project.slug}
-                className="grid gap-4 rounded-md border border-border bg-card px-4 py-4 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.4fr)] md:px-6 md:py-5"
+                className="grid gap-4 rounded-md shadow-accent-foreground shadow-inner border border-border bg-card px-4 py-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.4fr)] md:px-6 md:py-5"
               >
-                <div className="space-y-3">
+                <div className="space-y-5">
                   <h3 className="text-sm font-semibold text-foreground md:text-base">
                     {project.title}
                   </h3>
@@ -194,14 +206,17 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-                <div className="relative h-32 md:h-40 rounded-md border border-border bg-background/40 overflow-hidden">
+                <Link
+                  href={project.demoUrl}
+                  className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden"
+                >
                   <Image
                     src={project?.thumbnail || "/placeholder.png"}
                     alt={`${project?.title || "Project"} thumbnail`}
                     fill
                     className="object-cover"
                   />
-                </div>
+                </Link>
               </article>
             ))}
           </div>
@@ -343,13 +358,16 @@ export default function Home() {
                 name="message"
                 rows={4}
                 className="rounded-md border border-border bg-background px-2 py-2 text-sm text-foreground outline-none ring-0 focus:border-ring"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <button
-              type="submit"
+              type="button"
+              onClick={handleSendEmail}
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >
-              Send message
+              Send email
             </button>
           </form>
         </section>
