@@ -126,7 +126,7 @@ export default function Home() {
         >
           <div className="relative h-56 md:h-64 rounded-md border border-border bg-background/40 overflow-hidden">
             <Image
-              src="/dev2.JPG"
+              src="/me.jpeg"
               alt="Mesiri Olomu"
               fill
               className="object-cover"
