@@ -19,7 +19,7 @@ const projects = [
     title: "Admin dashboard",
     summary:
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
-    tags: ["React", "TypeScript", "Charts"],
+    tags: ["React", "TypeScript", "Charts", "Redux"],
   },
   {
     slug: "react-native-app",
@@ -27,6 +27,20 @@ const projects = [
     summary:
       "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
     tags: ["React Native", "TypeScript"],
+  },
+  {
+    slug: "change-for-humanity",
+    title: "Change For Humanity",
+    summary:
+      "A website for a non-profit organization focused on providing resources and support to those in need.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Redux"],
+  },
+  {
+    slug: "riser-school",
+    title: "Riser School",
+    summary:
+      "A website for a school focused on providing resources and support to those in need.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
   },
 ];
 

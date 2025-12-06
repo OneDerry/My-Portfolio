@@ -77,9 +77,9 @@ const projects = {
     demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
     repoUrl: "https://github.com/OneDerry/E-Commerce",
     thumbnail: "/thumbnail/ecommerce-thumbnail.png",
-    img1: "/ecommm1.png",
-    img2: "/ecommm2.png",
-    img3: "/ecommm3.png",
+    img1: "/c1.png",
+    img2: "/c2.png",
+    img3: "/c3.png",
     solution:
       "Created a reusable case study template with consistent structure and responsive design.",
     learning:
@@ -88,6 +88,42 @@ const projects = {
       "A placeholder project used to demonstrate the case study layout and structure.",
     problem:
       "This placeholder project demonstrates the structure and components of a full case study page.",
+  },
+  "change-for-humanity": {
+    title: "Change For Humanity",
+    tagline: "Fast, predictable storefront with a focused checkout path.",
+    tech: ["React", "TypeScript", "Redux Toolkit"],
+    demoUrl: "https://changeforhumanity.org",
+    repoUrl: "",
+    thumbnail: "/c1.png",
+    img1: "/c2.png",
+    img2: "/c3.png",
+    img3: "/c4.png",
+    learning:
+      "Improved understanding of React state management and Next.js routing patterns.",
+    solution: [],
+    overview: "",
+    problem: ["", "", "", ""],
+  },
+  "riser-school": {
+    title: "Riser School",
+    tagline:
+      "Operational dashboard with table-first layout and subtle analytics.",
+    tech: ["React", "TypeScript"],
+    demoUrl: "https://riser-kohl.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/riser",
+    thumbnail: "/riser.png",
+    img1: "/riser2.png",
+    img2: "/riser3.png",
+    img3: "/riser4.png",
+    learning:
+      "Gained experience with dashboard design patterns and data visualization.",
+    solution:
+      "Designed a table-first layout with filtering and sorting capabilities for efficient data management.",
+    overview:
+      "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
+    problem:
+      "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
   },
 } as const;
 

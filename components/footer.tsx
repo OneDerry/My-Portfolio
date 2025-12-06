@@ -19,13 +19,13 @@ export function Footer() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 hover-cta"
             >
               Contact section
             </a>
             <a
               href="mailto:mesiri.dev@gmail.com"
-              className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground hover-cta"
             >
               Email me
             </a>

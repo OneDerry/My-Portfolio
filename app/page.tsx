@@ -5,6 +5,7 @@ import { FeaturedProjects } from "../components/home/featured_projects";
 import { AdditionalProjects } from "../components/home/additional_projects";
 import { TechStack } from "../components/home/tech_stack";
 import { Contact } from "../components/home/contact";
+import Experience from "@/components/home/experience";
 
 export const metadata: Metadata = {
   title: "Frontend Developer – Mesiri Olomu",
@@ -18,6 +19,7 @@ export default function Home() {
       <div className="mx-auto flex max-w-[90%] sm:max-w-[70%] flex-col gap-20 px-6 py-20 md:px-8 md:py-24 lg:py-28">
         <Hero />
         <About />
+        <Experience />
         <FeaturedProjects />
         <AdditionalProjects />
         <TechStack />

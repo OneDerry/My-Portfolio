@@ -39,7 +39,13 @@ export function Header() {
             Projects
           </Link>
           <Link
-            href="/contact"
+            href="/#experience"
+            className="transition-colors hover:text-foreground"
+          >
+            Experience
+          </Link>
+          <Link
+            href="/#contact"
             className="transition-colors hover:text-foreground"
           >
             Contact
@@ -52,7 +58,7 @@ export function Header() {
             href="https://buymeacoffee.com/mesiri.olomu"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-md border border-yellow-500/60 bg-yellow-500/10 px-3 py-1.5 text-xs font-medium text-black dark:text-yellow-300 transition-colors hover:bg-yellow-500/20"
+            className="inline-flex items-center justify-center rounded-md border border-blue-500/60 bg-blue-500/10 px-3 py-1.5 text-xs font-medium text-black dark:text-blue-300 transition-colors hover:bg-yellow-500/20 hover-cta"
           >
             Buy me a coffee
           </a>
@@ -60,14 +66,14 @@ export function Header() {
             href="https://t.me/grangle"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-md bg-emerald-500/90 px-3 py-1.5 text-xs font-medium text-emerald-50 transition-colors hover:bg-emerald-500"
+            className="inline-flex items-center justify-center rounded-md bg-emerald-500/90 px-3 py-1.5 text-xs font-medium text-emerald-50 transition-colors hover:bg-emerald-500 hover-cta"
           >
             Hire Me
           </a>
           <button
             type="button"
             onClick={() => dispatch(toggleTheme())}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-xs text-muted-foreground shadow-2xl transition-colors hover:bg-accent hover:text-foreground"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-xs text-muted-foreground shadow-2xl transition-colors hover:bg-accent hover:text-foreground hover-cta"
             aria-label="Toggle theme"
           >
             {mode !== "dark" ? "🌙" : "☀️"}
@@ -99,7 +105,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-64 h-fit animate-ease-in-out mt-8 border-2 rounded-md border-accent-foreground shadow-accent-foreground shadow-inner"
+              className="w-64 h-fit animate-ease-in-out mt-8 border-2 rounded-md border-accent-foreground shadow-accent-foreground"
             >
               <SheetTitle className="sr-only">Main navigation</SheetTitle>
               <nav className="p-4 flex flex-col gap-2 text-sm text-muted-foreground">
@@ -110,10 +116,16 @@ export function Header() {
                   Home
                 </Link>
                 <Link
-                  href="#featured-projects"
+                  href="/#featured-projects"
                   className="rounded-md px-2 py-2 transition-colors hover:bg-accent hover:text-foreground"
                 >
                   Projects
+                </Link>
+                <Link
+                  href="/#contact"
+                  className="rounded-md px-2 py-2 transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Contact
                 </Link>
                 <a
                   href="https://t.me/grangle"
