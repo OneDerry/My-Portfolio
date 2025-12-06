@@ -54,7 +54,7 @@ export function Header() {
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-md border border-yellow-500/60 bg-yellow-500/10 px-3 py-1.5 text-xs font-medium text-black dark:text-yellow-300 transition-colors hover:bg-yellow-500/20"
           >
-            Support Me
+            Buy me a coffee
           </a>
           <a
             href="https://t.me/grangle"
