@@ -8,6 +8,7 @@ import {
   TbBrandReactNative,
 } from "react-icons/tb";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
+import { SlideSection } from "../ui/slide_section";
 
 const featuredProjects = [
   {
@@ -16,6 +17,7 @@ const featuredProjects = [
     summary:
       "A minimal storefront focused on performance, predictable state management, and a clean checkout flow.",
     tags: ["React", "TypeScript", "Redux"],
+    timeline: "2024-2025 Dec",
     demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
     repoUrl: "https://github.com/OneDerry/E-Commerce",
     thumbnail: "/thumbnail/ecommerce-thumbnail.png",
@@ -26,6 +28,7 @@ const featuredProjects = [
     summary:
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript"],
+    timeline: "2024-2025 Dec",
     demoUrl: "https://h-cube-dashboard.vercel.app/",
     repoUrl: "https://github.com/OneDerry/landing-dashboard",
     thumbnail: "/thumbnail/dashboard-thumbnail.png",
@@ -36,6 +39,7 @@ const featuredProjects = [
     summary:
       "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
     tags: ["React Native", "TypeScript"],
+    timeline: "Ongoing",
     demoUrl: "#",
   },
 ];
@@ -47,6 +51,7 @@ const liveProjects = [
     summary:
       "A minimal storefront focused on performance, predictable state management, and a clean checkout flow.",
     tags: ["React", "Next.js", "TypeScript", "Redux"],
+    timeline: "Ongoing",
     demoUrl: "https://changeforhumanity.org/",
     repoUrl: "",
     thumbnail: "/c1.png",
@@ -84,7 +89,7 @@ export function FeaturedProjects() {
         Live Projects
       </h1>
       <div className="grid sm:grid-cols-2 gap-6">
-        <section className="border-r border-border p-2">
+        <SlideSection className="border-r border-border p-2">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
               Production projects
@@ -99,9 +104,16 @@ export function FeaturedProjects() {
                 }`}
               >
                 <div className="space-y-5">
-                  <h3 className="text-sm font-semibold text-foreground md:text-base">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-foreground md:text-base">
+                      {project.title}
+                    </h3>
+                    {project.timeline && (
+                      <span className="rounded-full border border-border bg-background/60 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                        {project.timeline}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
                     {project.summary}
                   </p>
@@ -164,9 +176,9 @@ export function FeaturedProjects() {
               </article>
             ))}
           </div>
-        </section>
+        </SlideSection>
 
-        <section className="border-l border-border p-2">
+        <SlideSection className="border-l border-border p-2">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
               Featured projects
@@ -185,9 +197,16 @@ export function FeaturedProjects() {
                 }`}
               >
                 <div className="space-y-5">
-                  <h3 className="text-sm font-semibold text-foreground md:text-base">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-foreground md:text-base">
+                      {project.title}
+                    </h3>
+                    {project.timeline && (
+                      <span className="rounded-full border border-border bg-background/60 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                        {project.timeline}
+                      </span>
+                    )}
+                  </div>
                   <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
                     {project.summary}
                   </p>
@@ -250,7 +269,7 @@ export function FeaturedProjects() {
               </article>
             ))}
           </div>
-        </section>
+        </SlideSection>
       </div>
     </main>
   );

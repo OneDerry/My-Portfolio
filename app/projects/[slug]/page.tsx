@@ -6,6 +6,7 @@ import Link from "next/link";
 const projects = {
   "ecommerce-store": {
     title: "E-commerce storefront",
+    timeline: "2024",
     tagline: "Fast, predictable storefront with a focused checkout path.",
     tech: ["React", "TypeScript", "Redux Toolkit"],
     demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
@@ -33,6 +34,7 @@ const projects = {
   },
   "admin-dashboard": {
     title: "Admin dashboard",
+    timeline: "2024",
     tagline:
       "Operational dashboard with table-first layout and subtle analytics.",
     tech: ["React", "TypeScript"],
@@ -53,6 +55,7 @@ const projects = {
   },
   "react-native-app": {
     title: "React Native app",
+    timeline: "ONGOING",
     tagline: "Mobile client mirroring the web experience with shared logic.",
     tech: ["React Native", "TypeScript"],
     demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
@@ -91,6 +94,7 @@ const projects = {
   },
   "change-for-humanity": {
     title: "Change For Humanity",
+    timeline: "2023-2025",
     tagline: "Fast, predictable storefront with a focused checkout path.",
     tech: ["React", "TypeScript", "Redux Toolkit"],
     demoUrl: "https://changeforhumanity.org",
@@ -107,6 +111,7 @@ const projects = {
   },
   "riser-school": {
     title: "Riser School",
+    timeline: "2024-2025",
     tagline:
       "Operational dashboard with table-first layout and subtle analytics.",
     tech: ["React", "TypeScript"],
@@ -124,6 +129,27 @@ const projects = {
       "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
     problem:
       "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
+  },
+  "coffee-website": {
+    title: "Coffee website",
+    tagline:
+      "A coffee webite showcasing different coffee types and their prices.",
+    tech: ["React", "Next.js", "TypeScript"],
+    demoUrl: "https://coffee-shop-zeta-ruddy.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/coffee-shop",
+    thumbnail: "/coffee.png",
+    img1: "/coffee.png",
+    img2: "/coffee1.png",
+    img3: "/coffee2.png",
+    learning:
+      "Gained experience with dashboard design patterns and data visualization.",
+    solution:
+      "Designed a table-first layout with filtering and sorting capabilities for efficient data management.",
+    overview:
+      "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
+    problem:
+      "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
+    timeline: "2025",
   },
 } as const;
 

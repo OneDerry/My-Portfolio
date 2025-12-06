@@ -2,6 +2,7 @@ import { FaReact } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
+import { SlideSection } from "../ui/slide_section";
 
 const roles = [
   {
@@ -46,7 +47,7 @@ function getTagIcon(tag: string) {
 
 export function Experience() {
   return (
-    <section id="experience" className="flex flex-col gap-6 animate-fade-in-up">
+    <SlideSection from="left" id="experience" className="flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
         <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
           Experience
@@ -95,7 +96,7 @@ export function Experience() {
           </article>
         ))}
       </div>
-    </section>
+    </SlideSection>
   );
 }
 

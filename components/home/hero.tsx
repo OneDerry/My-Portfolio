@@ -10,6 +10,7 @@ import {
   TbBrandReactNative,
   TbBrandNextjs,
 } from "react-icons/tb";
+import { SlideSection } from "../ui/slide_section";
 
 export function Hero() {
   const [stackText, setStackText] = useState("");
@@ -67,7 +68,7 @@ export function Hero() {
         <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Frontend Developer —
           <span className="ml-1 align-baseline text-primary">{stackText}</span>
-          <span className="ml-1 inline-block h-5 w-[1px] translate-y-[2px] bg-primary/80 align-middle animate-pulse" />
+          <span className="ml-1 inline-block h-5 w-[1.5px] translate-y-[2px] bg-primary/80 align-middle animate-pulse" />
         </h1>
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
           I design and build focused, maintainable UIs with modern React
@@ -91,32 +92,38 @@ export function Hero() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4 text-xs text-muted-foreground">
-        <div className="rounded-md border border-border bg-card px-4 py-3">
+        <SlideSection
+          from="left"
+          className="rounded-md border border-border bg-card px-4 py-3"
+        >
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             Core
           </p>
           <p className="mt-2 font-medium text-foreground">React · TypeScript</p>
-        </div>
-        <div className="rounded-md border border-border bg-card px-4 py-3">
+        </SlideSection>
+        <SlideSection className="rounded-md border border-border bg-card px-4 py-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             State
           </p>
           <p className="mt-2 font-medium text-foreground">Redux Toolkit</p>
-        </div>
-        <div className="rounded-md border border-border bg-card px-4 py-3">
+        </SlideSection>
+        <SlideSection
+          from="left"
+          className="rounded-md border border-border bg-card px-4 py-3"
+        >
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             Mobile
           </p>
           <p className="mt-2 font-medium text-foreground">React Native</p>
-        </div>
-        <div className="rounded-md border border-border bg-card px-4 py-3">
+        </SlideSection>
+        <SlideSection className="rounded-md border border-border bg-card px-4 py-3">
           <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             Approach
           </p>
           <p className="mt-2 font-medium text-foreground">
             Minimal, testable UIs
           </p>
-        </div>
+        </SlideSection>
       </div>
     </section>
   );

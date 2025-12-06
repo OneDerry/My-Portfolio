@@ -1,3 +1,4 @@
+import { SlideSection } from "@/components/ui/slide_section";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -62,7 +63,7 @@ export default function ProjectsPage() {
           </p>
         </header>
 
-        <section className="grid gap-4 md:grid-cols-2 animate-fade-in-up">
+        <SlideSection className="grid gap-4 md:grid-cols-2 animate-fade-in-up">
           {projects.map((project) => (
             <a
               key={project.slug}
@@ -87,7 +88,7 @@ export default function ProjectsPage() {
               </div>
             </a>
           ))}
-        </section>
+        </SlideSection>
       </div>
     </main>
   );

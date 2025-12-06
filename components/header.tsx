@@ -20,15 +20,18 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 text-sm font-medium text-muted-foreground"
         >
-          <span className="relative h-8 w-8 rounded-full border border-border overflow-hidden">
-            <Image
-              src="/me.jpeg"
-              alt="Mesiri Olomu"
-              fill
-              sizes="32px"
-              className="rounded-full object-cover"
-            />
-          </span>
+          <div className="bg-blue-500 relative rounded-full flex items-center p-[1.5px]">
+            <span className="relative h-8 w-8 rounded-full border border-border overflow-hidden">
+              <Image
+                src="/me.jpeg"
+                alt="Mesiri Olomu"
+                fill
+                sizes="32px"
+                className="rounded-full object-cover"
+              />
+            </span>
+            <div className="absolute bottom-0 right-0 h-2 w-2 bg-green-500 rounded-full"></div>
+          </div>
           <span>Mesiri Olomu</span>
         </Link>
 

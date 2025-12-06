@@ -1,14 +1,15 @@
 import Image from "next/image";
+import { SlideSection } from "../ui/slide_section";
 
 export function About() {
   return (
-    <section
+    <SlideSection
       id="about"
-      className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:items-start animate-fade-in-up"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:items-start"
     >
-      <div className="relative h-56 md:h-64 rounded-md border border-border bg-background/40 overflow-hidden">
+      <div className="relative h-56 md:h-96 rounded-md border border-blue-800 bg-background/40 overflow-hidden">
         <Image
-          src="/me.jpeg"
+          src="/abjdev2.png"
           alt="Mesiri Olomu"
           fill
           className="object-cover"
@@ -31,6 +32,6 @@ export function About() {
           code that other developers can easily understand and maintain.
         </p>
       </div>
-    </section>
+    </SlideSection>
   );
 }
