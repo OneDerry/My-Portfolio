@@ -33,13 +33,7 @@ export function Header() {
             Home
           </Link>
           <Link
-            href="#about"
-            className="transition-colors hover:text-foreground"
-          >
-            About
-          </Link>
-          <Link
-            href="#featured-projects"
+            href="/projects"
             className="transition-colors hover:text-foreground"
           >
             Projects

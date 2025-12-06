@@ -1,3 +1,4 @@
+import { ArrowLeftToLine } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -144,6 +145,19 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex max-w-[90%] sm:max-w-[70%] flex-col gap-16 px-6 py-20 md:px-8 md:py-24 lg:py-28">
+        {/* Navigation footer */}
+        <div className="flex items-center justify-between border-b border-border pb-6 text-sm text-muted-foreground">
+          <Link
+            href="/projects"
+            className="text-sm font-medium text-primary flex items-center gap-2 group underline-offset-4 hover:underline"
+          >
+            <ArrowLeftToLine className="group-hover:-translate-x-1 transition-all" />{" "}
+            Back to projects
+          </Link>
+          <span className="text-xs text-muted-foreground">
+            Next project · placeholder
+          </span>
+        </div>
         {/* Header */}
         <header className="space-y-4">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
@@ -167,7 +181,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
           <div className="relative h-40 md:h-96 rounded-md border border-border bg-background/40 overflow-hidden">
             <Image
-              src={project?.thumbnail || "/placeholder.png"}
+              src={project?.thumbnail || "/file.svg"}
               alt={`${project?.title || "Project"} thumbnail`}
               fill
               className="object-cover"
@@ -268,7 +282,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="grid gap-3 md:grid-cols-3">
             <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
               <Image
-                src={project?.img1 || "/placeholder.png"}
+                src={project?.img1 || "/file.svg"}
                 alt={`${project?.title || "Project"} thumbnail`}
                 fill
                 className="object-cover"
@@ -276,7 +290,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
               <Image
-                src={project?.img2 || "/placeholder.png"}
+                src={project?.img2 || "/file.svg"}
                 alt={`${project?.title || "Project"} thumbnail`}
                 fill
                 className="object-cover"
@@ -284,7 +298,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </div>
             <div className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden">
               <Image
-                src={project?.img3 || "/placeholder.png"}
+                src={project?.img3 || "/file.svg"}
                 alt={`${project?.title || "Project"} thumbnail`}
                 fill
                 className="object-cover"
@@ -324,19 +338,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </Link>
           </div>
         </section>
-
-        {/* Navigation footer */}
-        <footer className="flex items-center justify-between border-t border-border pt-6 text-sm text-muted-foreground">
-          <Link
-            href="/projects"
-            className="text-sm font-medium text-primary underline-offset-4 hover:underline"
-          >
-            Back to projects
-          </Link>
-          <span className="text-xs text-muted-foreground">
-            Next project · placeholder
-          </span>
-        </footer>
       </div>
     </main>
   );
