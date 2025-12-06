@@ -58,7 +58,9 @@ const liveProjects = [
 export function FeaturedProjects() {
   return (
     <main id="featured-projects" className=" animate-fade-in-up duration-1000 ">
-      <h1>Live Projects</h1>
+      <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+        Live Projects
+      </h1>
       <div className="grid sm:grid-cols-2 gap-6">
         <section className="border-r-2 border-border p-2">
           <div className="flex items-baseline justify-between gap-4">
@@ -66,7 +68,7 @@ export function FeaturedProjects() {
               Production projects
             </h2>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 mt-2">
             {liveProjects.map((project) => (
               <article
                 key={project.slug}
@@ -134,7 +136,7 @@ export function FeaturedProjects() {
               Featured projects
             </h2>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 mt-2">
             {featuredProjects.map((project) => (
               <article
                 key={project.slug}

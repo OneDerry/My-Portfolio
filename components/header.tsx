@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur sticky top-0 z-40">
-      <div className="mx-auto flex max-w-[90%] sm:max-w-[70%] items-center justify-between px-4 py-4 md:px-8">
+      <div className="mx-auto grid max-w-[90%] sm:max-w-[70%] sm:grid-cols-3 items-center gap-4 px-4 py-4 md:px-8">
         <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
           <span className="relative h-8 w-8 rounded-full border border-border overflow-hidden">
             <Image
@@ -27,8 +27,8 @@ export function Header() {
           <span>Mesiri Olomu</span>
         </div>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+        {/* Desktop nav (center column) */}
+        <nav className="hidden items-center justify-center gap-6 text-sm text-muted-foreground md:flex">
           <Link href="/" className="transition-colors hover:text-foreground">
             Home
           </Link>
@@ -44,15 +44,35 @@ export function Header() {
           >
             Contact
           </Link>
+        </nav>
+
+        {/* Desktop actions (right column) */}
+        <div className="hidden items-center justify-end gap-3 md:flex">
+          <a
+            href="https://buymeacoffee.com/mesiri.olomu"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-md border border-yellow-500/60 bg-yellow-500/10 px-3 py-1.5 text-xs font-medium text-black dark:text-yellow-300 transition-colors hover:bg-yellow-500/20"
+          >
+            Support Me
+          </a>
+          <a
+            href="https://t.me/grangle"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-md bg-emerald-500/90 px-3 py-1.5 text-xs font-medium text-emerald-50 transition-colors hover:bg-emerald-500"
+          >
+            Hire Me
+          </a>
           <button
             type="button"
             onClick={() => dispatch(toggleTheme())}
-            className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-xs text-muted-foreground shadow-2xl transition-colors hover:bg-accent hover:text-foreground"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-xs text-muted-foreground shadow-2xl transition-colors hover:bg-accent hover:text-foreground"
             aria-label="Toggle theme"
           >
             {mode !== "dark" ? "🌙" : "☀️"}
           </button>
-        </nav>
+        </div>
 
         {/* Mobile controls */}
         <div className="flex items-center gap-2 md:hidden">
@@ -95,6 +115,22 @@ export function Header() {
                 >
                   Projects
                 </Link>
+                <a
+                  href="https://t.me/grangle"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md px-2 py-2 transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Hire Me
+                </a>
+                <a
+                  href="https://buymeacoffee.com/mesiri.olomu"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md px-2 py-2 transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  Support Me
+                </a>
               </nav>
             </SheetContent>
           </Sheet>

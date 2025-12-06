@@ -34,7 +34,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 border-t border-border pt-4 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-3">
-            <span>Based in [Your City], working remotely (UTC+1)</span>
+            <span>Based in Lagos, working remotely Abuja</span>
             <span className="hidden h-1 w-1 rounded-full bg-muted-foreground/60 md:inline-block" />
             <span>Built with Next.js, TypeScript, Tailwind CSS</span>
           </div>
