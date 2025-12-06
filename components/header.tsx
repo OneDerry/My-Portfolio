@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur sticky top-0 z-40">
-      <div className="mx-auto grid max-w-[90%] sm:max-w-[70%] grid-cols-2 sm:grid-cols-3 items-center gap-4 px-4 py-4 md:px-8">
+      <div className="mx-auto grid max-w-[90%] sm:max-w-[70%] justify-between grid-cols-2 sm:grid-cols-3 items-center gap-4 px-4 py-4 md:px-8">
         <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
           <span className="relative h-8 w-8 rounded-full border border-border overflow-hidden">
             <Image
