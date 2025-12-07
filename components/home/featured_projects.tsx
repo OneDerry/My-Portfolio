@@ -247,12 +247,14 @@ export function FeaturedProjects() {
                         View code
                       </a>
                     )}
-                    <a
-                      href={`/projects/${project.slug}`}
-                      className="text-xs font-medium text-primary underline-offset-4 hover:underline"
-                    >
-                      Read case study
-                    </a>
+                    {project.repoUrl && (
+                      <a
+                        href={`/projects/${project.slug}`}
+                        className="text-xs font-medium text-primary underline-offset-4 hover:underline"
+                      >
+                        Read case study
+                      </a>
+                    )}
                   </div>
                 </div>
                 <Link

@@ -43,7 +43,7 @@ export function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="flex flex-col items-center gap-8 rounded-xl border border-border/50 bg-linear-to-b from-background via-background/80 to-background/40 px-4 py-10 md:px-8 lg:px-12 animate-fade-in-up"
+      className="flex flex-col items-center gap-8 rounded-xl border border-border/50 bg-linear-to-b from-background via-background/80 to-background/40 px-4 py-10 md:px-8 lg:px-12"
     >
       <div className="flex flex-col items-center gap-2 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-500">
@@ -58,7 +58,7 @@ export function TechStack() {
         </p>
       </div>
 
-      <div className="grid w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="sm:grid max-h-[400px] overflow-y-auto overflow-x-hidden flex flex-col sm:h-full w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {tools.map((tool, index) => {
           const Icon = tool.icon;
           const isOddPosition = (index + 1) % 2 === 1;
@@ -66,7 +66,7 @@ export function TechStack() {
             <SlideSection
               key={tool.name}
               from={isOddPosition ? "left" : undefined}
-              className="flex flex-col justify-between rounded-xl border border-border/60 bg-card/60 px-5 py-5 shadow-[0_0_0_1px_rgba(15,23,42,0.4)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
+              className="flex flex-col items-center justify-between rounded-xl border border-border/60 bg-card/60 px-5 py-5 shadow-[0_0_0_1px_rgba(15,23,42,0.4)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
             >
               <div className="flex-1">
                 {Icon && (
@@ -74,11 +74,11 @@ export function TechStack() {
                     <Icon className="h-5 w-5" />
                   </div>
                 )}
+              </div>
+              <div className="mt-3 inline-flex items-center gap-1 rounded-full bg-muted/60 px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                 <p className="text-sm font-medium text-foreground">
                   {tool.name}
                 </p>
-              </div>
-              <div className="mt-3 inline-flex items-center gap-1 rounded-full bg-muted/60 px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 <span>{tool.level}</span>
               </div>

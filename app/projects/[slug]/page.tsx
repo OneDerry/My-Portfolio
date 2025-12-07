@@ -31,6 +31,13 @@ const projects = {
       "State and data flow complexity — Coordinating Redux slices (cartSlice, authSlice, productSlice, orderSlice), the RTK Query API layer (apiSlice), and custom hooks (useAuth, useProducts, useProduct) made data flow non-trivial. Tracking down wrong data or empty lists often meant debugging both the API layer and the slice logic at the same time.",
       "Auth flow and token persistence — Designing a reliable auth flow with validated login/sign-up forms (Zod + React Hook Form), localStorage-based token persistence, and auto-verifying the current user on app load (useGetCurrentUserQuery in Providers and authSlice extraReducers) took several iterations to avoid inconsistent or out-of-sync auth state.",
     ],
+    keyFeatures: [
+      "Product catalog with filtering, search, and category navigation.",
+      "Persistent shopping cart synced with localStorage.",
+      "Secure authentication with JWT tokens and auto-refresh.",
+      "Responsive design optimized for mobile, tablet, and desktop.",
+      "Order history and user account management.",
+    ],
   },
   "admin-dashboard": {
     title: "Admin dashboard",
@@ -52,6 +59,13 @@ const projects = {
       "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
     problem:
       "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
+    keyFeatures: [
+      "Data tables with sorting, filtering, and pagination.",
+      "Real-time analytics charts and KPI cards.",
+      "User management with role-based access control.",
+      "Responsive sidebar navigation with collapsible sections.",
+      "Export functionality for reports and data.",
+    ],
   },
   "react-native-app": {
     title: "React Native app",
@@ -72,6 +86,13 @@ const projects = {
       "A cross-platform mobile application that mirrors the web experience while sharing business logic for consistency and reduced maintenance.",
     problem:
       "The client needed a mobile presence that provided the same functionality as their web platform while maintaining a consistent user experience across devices.",
+    keyFeatures: [
+      "Native iOS and Android apps from a single codebase.",
+      "Shared business logic with the web application.",
+      "Offline-first architecture with local data caching.",
+      "Push notifications for order updates and promotions.",
+      "Smooth animations and native-feeling interactions.",
+    ],
   },
   "sample-project": {
     title: "Sample project",
@@ -91,30 +112,60 @@ const projects = {
       "A placeholder project used to demonstrate the case study layout and structure.",
     problem:
       "This placeholder project demonstrates the structure and components of a full case study page.",
+    keyFeatures: [
+      "Reusable case study template structure.",
+      "Responsive layout for all screen sizes.",
+      "Clean typography and visual hierarchy.",
+      "Easy-to-update content sections.",
+      "Consistent design language across projects.",
+    ],
   },
   "change-for-humanity": {
     title: "Change For Humanity",
     timeline: "2023-2025",
-    tagline: "Fast, predictable storefront with a focused checkout path.",
-    tech: ["React", "TypeScript", "Redux Toolkit"],
+    tagline:
+      "A nonprofit platform connecting donors with impactful humanitarian causes worldwide.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"], // Update with actual stack
     demoUrl: "https://changeforhumanity.org",
-    repoUrl: "",
+    repoUrl: "", // Add if public
     thumbnail: "/c1.png",
     img1: "/c2.png",
     img2: "/c3.png",
     img3: "/c4.png",
+
+    overview:
+      "Change For Humanity is a nonprofit web platform designed to connect donors with humanitarian causes. The site showcases ongoing initiatives, accepts donations, and provides transparency through impact stories and progress updates.",
+
+    problem: [
+      "The organization lacked a modern digital presence to reach potential donors effectively.",
+      "Previous donation workflows were fragmented across multiple third-party platforms.",
+      "Content updates required developer intervention, slowing down communication with supporters.",
+      "Mobile users experienced poor usability on the legacy site.",
+    ],
+
+    solution: [
+      "Built a responsive React SPA with Vite for fast load times and smooth navigation.",
+      "Implemented a unified donation flow integrated with [payment provider] for seamless transactions.",
+      "Created a content structure that allows easy updates to campaigns and impact stories.",
+      "Designed mobile-first layouts ensuring accessibility across all device sizes.",
+    ],
+
     learning:
-      "Improved understanding of React state management and Next.js routing patterns.",
-    solution: [],
-    overview: "",
-    problem: ["", "", "", ""],
+      "Deepened my understanding of building for nonprofit audiences—balancing emotional storytelling with clear calls-to-action. Also gained experience coordinating with stakeholders who have non-technical backgrounds.",
+    keyFeatures: [
+      "Campaign pages with progress tracking and donation goals.",
+      "Integrated donation flow with secure payment processing.",
+      "Impact stories and testimonials section.",
+      "Mobile-responsive design for on-the-go donors.",
+      "Social sharing integration for campaign visibility.",
+    ],
   },
   "riser-school": {
     title: "Riser School",
     timeline: "2024-2025",
     tagline:
-      "Operational dashboard with table-first layout and subtle analytics.",
-    tech: ["React", "TypeScript"],
+      "An educational platform with integrated payment processing for seamless tuition management.",
+    tech: ["React", "TypeScript", "Vite", "Paystack"],
     demoUrl: "https://riser-kohl.vercel.app/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
@@ -122,19 +173,34 @@ const projects = {
     img2: "/riser3.png",
     img3: "/riser4.png",
     learning:
-      "Gained experience with dashboard design patterns and data visualization.",
-    solution:
-      "Designed a table-first layout with filtering and sorting capabilities for efficient data management.",
+      "Strengthened my skills in integrating third-party payment APIs (Paystack) and handling secure transaction flows. Also improved collaboration workflows through a multi-contributor project.",
+    solution: [
+      "Built a responsive React SPA with Vite for fast development and optimized production builds.",
+      "Integrated Paystack for secure, reliable payment processing of tuition and fees.",
+      "Designed an intuitive interface that simplifies enrollment and payment workflows for students and parents.",
+      "Implemented TypeScript throughout for type safety and improved developer experience.",
+    ],
     overview:
-      "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
-    problem:
-      "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
+      "Riser School is an educational web platform that streamlines the enrollment and payment process for students. It provides a modern interface for browsing courses, managing registrations, and processing tuition payments securely via Paystack.",
+    problem: [
+      "Manual enrollment and payment processes created administrative overhead for the school.",
+      "Parents and students lacked a centralized platform to view courses and make payments online.",
+      "Existing solutions were either too complex or lacked local payment gateway support.",
+      "The school needed a modern, mobile-friendly interface to attract and retain students.",
+    ],
+    keyFeatures: [
+      "Course catalog with detailed program information.",
+      "Secure Paystack integration for tuition payments.",
+      "Student enrollment and registration system.",
+      "Payment history and receipt generation.",
+      "Mobile-friendly interface for parents and students.",
+    ],
   },
   "coffee-website": {
-    title: "Coffee website",
+    title: "Coffee Haven",
     tagline:
-      "A coffee webite showcasing different coffee types and their prices.",
-    tech: ["React", "Next.js", "TypeScript"],
+      "A modern coffee shop website with e-commerce functionality and a warm, inviting design.",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     demoUrl: "https://coffee-shop-zeta-ruddy.vercel.app/",
     repoUrl: "https://github.com/OneDerry/coffee-shop",
     thumbnail: "/coffee.png",
@@ -142,13 +208,28 @@ const projects = {
     img2: "/coffee1.png",
     img3: "/coffee2.png",
     learning:
-      "Gained experience with dashboard design patterns and data visualization.",
-    solution:
-      "Designed a table-first layout with filtering and sorting capabilities for efficient data management.",
+      "Improved my skills in building visually appealing e-commerce interfaces and implementing shopping cart functionality. Gained experience balancing aesthetic design with usability for a retail audience.",
+    solution: [
+      "Built a Next.js application with server-side rendering for fast initial page loads and SEO benefits.",
+      "Designed a warm, inviting UI that reflects the coffee shop brand with bestsellers and combo offers prominently displayed.",
+      "Implemented a shopping cart system for browsing products and managing orders.",
+      "Added customer reviews section to build trust and social proof for the brand.",
+    ],
     overview:
-      "A comprehensive admin interface for managing products, orders, and user accounts with real-time data visualization.",
-    problem:
-      "The client needed a centralized admin interface to efficiently manage their growing product catalog, process orders, and monitor user activity across multiple channels.",
+      "Coffee Haven is an e-commerce website for a coffee shop, featuring a product catalog with bestsellers, special combo offers, customer reviews, and a shopping cart. The design emphasizes warmth and craftsmanship to match the brand's 'brewed with passion' identity.",
+    problem: [
+      "The coffee shop needed an online presence to reach customers beyond their physical location.",
+      "Customers had no way to browse the menu or place orders online.",
+      "The brand lacked a digital storefront that reflected its artisanal, passion-driven identity.",
+      "No system existed to showcase customer reviews and build social proof.",
+    ],
+    keyFeatures: [
+      "Product catalog with bestsellers and combo offers.",
+      "Shopping cart with add/remove and quantity controls.",
+      "Customer reviews and ratings section.",
+      "Contact page with location and business hours.",
+      "Warm, brand-aligned visual design throughout.",
+    ],
     timeline: "2025",
   },
 } as const;
@@ -300,23 +381,18 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </section>
 
         {/* Key features */}
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
-            Key features
-          </h2>
-          <ul className="grid gap-2 text-sm text-muted-foreground md:text-base">
-            <li>
-              Clear, minimal layout that highlights the primary user task.
-            </li>
-            <li>Predictable state management with explicit data flows.</li>
-            <li>Responsive design tuned for desktop, tablet, and mobile.</li>
-            <li>Meaningful empty states and loading states.</li>
-            <li>
-              Accessibility-first details such as keyboard navigation and
-              labels.
-            </li>
-          </ul>
-        </section>
+        {"keyFeatures" in project && project.keyFeatures && (
+          <section className="space-y-3">
+            <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
+              Key features
+            </h2>
+            <ul className="grid gap-2 text-sm text-muted-foreground md:text-base">
+              {project.keyFeatures.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* Tech stack */}
         <section className="space-y-3">

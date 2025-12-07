@@ -22,13 +22,13 @@ const projects = [
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript", "Charts", "Redux"],
   },
-  {
-    slug: "react-native-app",
-    title: "React Native app",
-    summary:
-      "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
-    tags: ["React Native", "TypeScript"],
-  },
+  // {
+  //   slug: "react-native-app",
+  //   title: "React Native app",
+  //   summary:
+  //     "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
+  //   tags: ["React Native", "TypeScript"],
+  // },
   {
     slug: "change-for-humanity",
     title: "Change For Humanity",
