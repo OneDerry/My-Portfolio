@@ -3,6 +3,8 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
+import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 const roles = [
   {
@@ -20,6 +22,14 @@ const roles = [
     summary:
       "Helped teams refactor legacy UIs, introduce typed APIs, and tighten up design systems.",
     tech: ["React", "TypeScript", "REST APIs", "Redux Toolkit"],
+  },
+  {
+    company: "Fourcore Integrated Services",
+    role: "Quality Assurance Engineer (part-time)",
+    period: "MAR 2024 - JUN 2024",
+    summary:
+      "Conducted thorough testing of web applications, identified bugs, and collaborated with developers to ensure quality releases.",
+    tech: ["Cypress"],
   },
   {
     company: "Personal projects",
@@ -95,6 +105,15 @@ export function Experience() {
             </div>
           </article>
         ))}
+      </div>
+
+      <div className="flex items-center justify-center">
+        <Link
+          href="https://www.linkedin.com/in/mesiri-olomu"
+          className="w-fit rounded-lg border border-border bg-card px-6 py-2 flex items-center gap-2"
+        >
+          View LinkedIn <FaArrowRightLong />
+        </Link>
       </div>
     </SlideSection>
   );

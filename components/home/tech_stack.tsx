@@ -58,7 +58,7 @@ export function TechStack() {
         </p>
       </div>
 
-      <div className="sm:grid max-h-[400px] overflow-y-auto overflow-x-hidden flex flex-col sm:h-full w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="sm:grid max-h-[400px] overflow-y-auto overflow-x-hidden p-2 pt-4 flex flex-col sm:h-full w-full gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {tools.map((tool, index) => {
           const Icon = tool.icon;
           const isOddPosition = (index + 1) % 2 === 1;

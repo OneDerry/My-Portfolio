@@ -51,7 +51,7 @@ const liveProjects = [
     summary:
       "A minimal storefront focused on performance, predictable state management, and a clean checkout flow.",
     tags: ["React", "Next.js", "TypeScript", "Redux"],
-    timeline: "Ongoing",
+    timeline: "Completed",
     demoUrl: "https://changeforhumanity.org/",
     repoUrl: "",
     thumbnail: "/c1.png",
@@ -62,6 +62,7 @@ const liveProjects = [
     summary:
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript"],
+    timeline: "Ongoing",
     demoUrl: "https://riser-kohl.vercel.app/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
@@ -89,7 +90,7 @@ export function FeaturedProjects() {
         Live Projects
       </h1>
       <div className="grid sm:grid-cols-2 gap-6">
-        <SlideSection className="border-r border-border p-2">
+        <SlideSection className="border-r border-border p-2 max-h-[800px] overflow-y-auto">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
               Production projects
@@ -178,7 +179,7 @@ export function FeaturedProjects() {
           </div>
         </SlideSection>
 
-        <SlideSection className="border-l border-border p-2">
+        <SlideSection className="border-l border-border p-2 max-h-[800px] overflow-y-auto">
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="text-lg font-semibold tracking-tight text-foreground md:text-xl">
               Featured projects
