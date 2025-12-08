@@ -33,7 +33,7 @@ const additionalProjects: AdditionalProject[] = [
     repoUrl: "",
     image: "/window.svg",
     tech: ["React", "TypeScript"],
-    timeline: "2024",
+    timeline: "Ongoing",
   },
   {
     slug: "API integration app",
@@ -43,7 +43,7 @@ const additionalProjects: AdditionalProject[] = [
     repoUrl: "",
     image: "/window.svg",
     tech: ["React", "Next.js"],
-    timeline: "2024",
+    timeline: "Ongoing",
   },
   {
     slug: "Coffee website",
@@ -93,14 +93,14 @@ export function AdditionalProjects() {
         {additionalProjects.map((project, index) => (
           <Card
             key={project.slug}
-            className={`dark:bg-card/90 shadow-accent-foreground/10 shadow-sm hover-card ${
+            className={`dark:bg-card/90 shadow-accent-foreground hover-card ${
               index === 0
-                ? "border border-blue-500/60"
+                ? "border border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]"
                 : index === 1
-                ? "border border-emerald-500/60"
+                ? "border border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]"
                 : index === 2
-                ? "border border-violet-500/60"
-                : "border border-amber-500/60"
+                ? "border border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]"
+                : "border border-amber-500/60 shadow-[0_0_2px_rgba(245,158,11,0.3)]"
             } ${index === 0 || index === 3 ? "lg:col-span-2" : ""}`}
           >
             {project.image && (

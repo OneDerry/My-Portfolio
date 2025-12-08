@@ -34,10 +34,19 @@ export function TechStack() {
   ];
 
   const categories = [
-    { label: "Frontend", color: "bg-emerald-500/10 text-emerald-300" },
-    { label: "Backend", color: "bg-sky-500/10 text-sky-300" },
-    { label: "DevOps", color: "bg-indigo-500/10 text-indigo-300" },
-    { label: "Mobile", color: "bg-pink-500/10 text-pink-300" },
+    {
+      label: "Frontend",
+      color: "bg-emerald-500/10 dark:text-emerald-300 text-emerald-800",
+    },
+    { label: "Backend", color: "bg-sky-500/10 dark:text-sky-300 text-sky-800" },
+    {
+      label: "DevOps",
+      color: "bg-indigo-500/10 dark:text-indigo-300 text-indigo-800",
+    },
+    {
+      label: "Mobile",
+      color: "bg-pink-500/10 dark:text-pink-300 text-pink-800",
+    },
   ];
 
   return (
@@ -66,7 +75,7 @@ export function TechStack() {
             <SlideSection
               key={tool.name}
               from={isOddPosition ? "left" : undefined}
-              className="flex flex-col items-center justify-between rounded-xl border border-border/60 bg-card/60 px-5 py-5 shadow-[0_0_0_1px_rgba(15,23,42,0.4)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
+              className="flex flex-col items-center justify-between rounded-xl border border-border/30 bg-card/60 px-5 py-5 shadow-[0_0_0_1px_rgba(15,23,42,0.4)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
             >
               <div className="flex-1">
                 {Icon && (

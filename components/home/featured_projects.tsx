@@ -101,7 +101,9 @@ export function FeaturedProjects() {
               <article
                 key={project.slug}
                 className={`grid gap-4 rounded-md shadow-accent-foreground  border bg-card px-4 py-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.4fr)] md:px-6 md:py-5 hover-card ${
-                  index === 0 ? "border-blue-500/60" : "border-emerald-500/60"
+                  index === 0
+                    ? "border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]"
+                    : "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]"
                 }`}
               >
                 <div className="space-y-5">
@@ -191,10 +193,10 @@ export function FeaturedProjects() {
                 key={project.slug}
                 className={`grid gap-4 rounded-md shadow-accent-foreground border bg-card px-4 py-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.4fr)] md:px-6 md:py-5 hover-card ${
                   index === 0
-                    ? "border-blue-500/60"
+                    ? "border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]"
                     : index === 1
-                    ? "border-emerald-500/60"
-                    : "border-violet-500/60"
+                    ? "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]"
+                    : "border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]"
                 }`}
               >
                 <div className="space-y-5">

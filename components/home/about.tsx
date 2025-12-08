@@ -7,7 +7,7 @@ export function About() {
       id="about"
       className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:items-start"
     >
-      <div className="relative h-56 md:h-96 rounded-md border border-blue-800 bg-background/40 overflow-hidden">
+      <div className="relative h-56 md:h-96 rounded-md border border-blue-500/60 shadow-[0_0_15px_rgba(59,130,246,0.3)] bg-background/40 overflow-hidden">
         <Image
           src="/abjdev2.png"
           alt="Mesiri Olomu"
