@@ -20,10 +20,10 @@ export function About() {
           About
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-          I&apos;m a frontend-focused engineer who enjoys turning product
+          Professional code is what i do, of course that comes with turning product
           requirements into small, predictable UI building blocks. My work leans
           on TypeScript, React, Redux, and modern CSS utilities to keep
-          codebases readable and scalable.
+          codebases readable and scalable. You should see how i arrange my code.
         </p>
         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
           When I&apos;m not coding, I enjoy exploring new technologies,

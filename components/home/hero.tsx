@@ -40,27 +40,27 @@ export function Hero() {
       className="relative h-[700px] grid gap-10 grid-cols-1 sm:grid-cols-2 md:items-center animate-fade-in-up"
     >
       <div className="pointer-events-none absolute inset-y-0 left-0 hidden h-full w-full flex-col items-start justify-between py-10 md:flex">
-        <div className="ml-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/60 bg-sky-400/10 text-sky-300 dark:shadow-[0_0_40px_rgba(56,189,248,0.4)] backdrop-blur-sm animate-[bounce_7s_infinite]">
+        <div className="ml-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/60 bg-sky-400/10 dark:text-sky-300 text-sky-600 dark:shadow-[0_0_40px_rgba(56,189,248,0.4)] backdrop-blur-sm animate-[bounce_7s_infinite]">
           <FaReact className="h-7 w-7" />
         </div>
-        <div className="-ml-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-yellow-400/60 bg-yellow-400/10 text-yellow-300 dark:shadow-[0_0_40px_rgba(250,204,21,0.4)] backdrop-blur-sm animate-[bounce_8s_infinite]">
+        <div className="-ml-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-yellow-400/60 bg-yellow-400/10 dark:text-yellow-300 text-yellow-600 dark:shadow-[0_0_40px_rgba(250,204,21,0.4)] backdrop-blur-sm animate-[bounce_8s_infinite]">
           <DiJavascript className="h-7 w-7" />
         </div>
-        <div className="ml-[8%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-500/60 bg-sky-500/10 text-sky-200 dark:shadow-[0_0_40px_rgba(59,130,246,0.4)] backdrop-blur-sm animate-[bounce_9s_infinite]">
+        <div className="ml-[8%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-500/60 bg-sky-500/10 dark:text-sky-200 text-sky-600 dark:shadow-[0_0_40px_rgba(59,130,246,0.4)] backdrop-blur-sm animate-[bounce_9s_infinite]">
           <BiLogoTypescript className="h-7 w-7" />
         </div>
       </div>
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-full flex-col items-end justify-between py-10 md:flex">
-        <div className="mr-[10%] flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-500/60 bg-zinc-900/80 dark:shadow-[0_0_40px_rgba(24,24,27,0.7)] backdrop-blur-sm animate-[bounce_7s_infinite]">
+        <div className="mr-[10%] flex h-12 w-12 items-center justify-center rounded-2xl border border-red-500/60   dark:text-red-500/60 text-red-500/60 bg-red-400/10 dark:shadow-[0_0_40px_rgba(24,24,27,0.7)] backdrop-blur-sm animate-[bounce_7s_infinite]">
           <TbBrandNextjs className="h-7 w-7" />
         </div>
-        <div className="mr-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/60 bg-sky-400/10 text-sky-300 dark:shadow-[0_0_40px_rgba(56,189,248,0.4)] backdrop-blur-sm animate-[bounce_8s_infinite]">
+        <div className="mr-[5%] flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/60 bg-sky-400/10 dark:text-sky-300 text-sky-600 dark:shadow-[0_0_40px_rgba(56,189,248,0.4)] backdrop-blur-sm animate-[bounce_8s_infinite]">
           <TbBrandTailwind className="h-7 w-7" />
         </div>
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-400/60 bg-emerald-400/10 text-emerald-300 dark:shadow-[0_0_40px_rgba(52,211,153,0.4)] backdrop-blur-sm animate-[bounce_9s_infinite]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-400/60 bg-emerald-400/10 text-emerald-600 dark:text-emerald-300 dark:shadow-[0_0_40px_rgba(52,211,153,0.4)] backdrop-blur-sm animate-[bounce_9s_infinite]">
           <TbBrandReactNative className="h-7 w-7" />
         </div>
-        <div className="mr-[7%] flex h-12 w-12 items-center justify-center rounded-2xl border border-indigo-400/60 bg-indigo-400/10 text-indigo-200 dark:shadow-[0_0_40px_rgba(129,140,248,0.45)] backdrop-blur-sm animate-[bounce_10s_infinite]">
+        <div className="mr-[7%] flex h-12 w-12 items-center justify-center rounded-2xl border border-indigo-400/60 bg-indigo-400/10 text-indigo-600 dark:text-indigo-200 dark:shadow-[0_0_40px_rgba(129,140,248,0.45)] backdrop-blur-sm animate-[bounce_10s_infinite]">
           <TbBrandRedux className="h-7 w-7" />
         </div>
       </div>
@@ -74,7 +74,7 @@ export function Hero() {
           <span className="ml-1 inline-block h-5 w-[1.5px] translate-y-[2px] bg-primary/80 align-middle animate-pulse" />
         </h1>
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-          I design and build focused, maintainable UIs with modern React
+          I build systems that make manual work stressful with modern React
           tooling, strong type-safety, and clear state management. This
           portfolio is a snapshot of how I approach real-world frontend
           problems.

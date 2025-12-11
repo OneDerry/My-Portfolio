@@ -11,14 +11,6 @@ import { useSound } from "@/lib/useSound";
 
 const roles = [
   {
-    company: "Freelance",
-    role: "Frontend Engineer",
-    period: "2022 – Present",
-    summary:
-      "Shipping React and Next.js interfaces for small businesses and non-profits, with a focus on performance and predictable state.",
-    tech: ["React", "Next.js", "TypeScript", "Redux Toolkit"],
-  },
-  {
     company: "Fourcore Integrated Services",
     role: "Frontend Developer (full-time)",
     period: "2023 - till date",
@@ -33,6 +25,14 @@ const roles = [
     summary:
       "Conducted thorough testing of web applications, identified bugs, and collaborated with developers to ensure quality releases.",
     tech: ["Cypress"],
+  },
+  {
+    company: "Freelance",
+    role: "Frontend Engineer",
+    period: "2022 – Present",
+    summary:
+      "Shipping React and Next.js interfaces for small businesses and non-profits, with a focus on performance and predictable state.",
+    tech: ["React", "Next.js", "TypeScript", "Redux Toolkit"],
   },
   {
     company: "Personal projects",

@@ -19,6 +19,7 @@ export function Header() {
     <header className="border-b border-border bg-background/80 backdrop-blur fixed top-0 left-0 right-0 z-40">
       <div className="mx-auto flex sm:grid max-w-[90%] sm:max-w-[70%] justify-between sm:grid-cols-3 items-center gap-4 px-4 py-4 md:px-8">
         <Link
+          onClick={playNavClick}
           href="/"
           className="flex items-center gap-2 text-sm font-medium text-muted-foreground"
         >

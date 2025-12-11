@@ -29,6 +29,16 @@ type AdditionalProject = {
 
 const additionalProjects: AdditionalProject[] = [
   {
+    slug: "Coffee website",
+    description:
+      "A coffee webite showcasing different coffee types and their prices.",
+    demoUrl: "https://coffee-shop-zeta-ruddy.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/coffee-shop",
+    image: "/coffee.png",
+    tech: ["React", "Next.js", "TypeScript"],
+    timeline: "2025",
+  },
+  {
     slug: "Multi-step form",
     description:
       "A focused multi-step flow with clear progress and validation for complex inputs.",
@@ -47,16 +57,6 @@ const additionalProjects: AdditionalProject[] = [
     image: "/window.svg",
     tech: ["React", "Next.js"],
     timeline: "Ongoing",
-  },
-  {
-    slug: "Coffee website",
-    description:
-      "A coffee webite showcasing different coffee types and their prices.",
-    demoUrl: "https://coffee-shop-zeta-ruddy.vercel.app/",
-    repoUrl: "https://github.com/OneDerry/coffee-shop",
-    image: "/coffee.png",
-    tech: ["React", "Next.js", "TypeScript"],
-    timeline: "2025",
   },
   {
     slug: "Design system playground",
