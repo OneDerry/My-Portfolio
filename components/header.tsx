@@ -4,14 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../lib/store";
+import { useSound } from "@/lib/useSound";
 import { toggleTheme } from "../lib/themeSlice";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { MusicToggle } from "./music/music_toggle";
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const mode = useSelector((state: RootState) => state.theme.mode);
   const dispatch = useDispatch();
+  const { play: playNavClick } = useSound("/sounds/click.wav", 0.5);
 
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur fixed top-0 left-0 right-0 z-40">
@@ -33,26 +36,34 @@ export function Header() {
             <div className="absolute bottom-0 right-0 h-2 w-2 bg-green-500 rounded-full"></div>
           </div>
           <span>Mesiri Olomu</span>
+          <MusicToggle />
         </Link>
 
         {/* Desktop nav (center column) */}
         <nav className="hidden items-center justify-center gap-6 text-sm text-muted-foreground md:flex">
-          <Link href="/" className="transition-colors hover:text-foreground">
+          <Link
+            onClick={playNavClick}
+            href="/"
+            className="transition-colors hover:text-foreground"
+          >
             Home
           </Link>
           <Link
+            onClick={playNavClick}
             href="/projects"
             className="transition-colors hover:text-foreground"
           >
             Projects
           </Link>
           <Link
+            onClick={playNavClick}
             href="/#experience"
             className="transition-colors hover:text-foreground"
           >
             Experience
           </Link>
           <Link
+            onClick={playNavClick}
             href="/#contact"
             className="transition-colors hover:text-foreground"
           >
@@ -81,7 +92,7 @@ export function Header() {
           </a>
           <button
             type="button"
-            onClick={() => dispatch(toggleTheme())}
+            onClick={() => dispatch(toggleTheme()) && playNavClick()}
             className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border bg-background text-xs text-muted-foreground shadow-2xl transition-colors hover:bg-accent hover:text-foreground hover-cta"
             aria-label="Toggle theme"
           >

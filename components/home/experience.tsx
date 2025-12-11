@@ -1,3 +1,5 @@
+"use client";
+
 import { FaReact } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
@@ -5,6 +7,7 @@ import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
+import { useSound } from "@/lib/useSound";
 
 const roles = [
   {
@@ -56,6 +59,8 @@ function getTagIcon(tag: string) {
 }
 
 export function Experience() {
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
+
   return (
     <SlideSection from="left" id="experience" className="flex flex-col gap-6 ">
       <div className="flex flex-col gap-2">
@@ -110,6 +115,7 @@ export function Experience() {
       <div className="flex items-center justify-center">
         <Link
           href="https://www.linkedin.com/in/mesiri-olomu"
+          onClick={playClick}
           className="w-fit rounded-lg border border-border bg-card px-6 py-2 flex items-center gap-2"
         >
           View LinkedIn <FaArrowRightLong />

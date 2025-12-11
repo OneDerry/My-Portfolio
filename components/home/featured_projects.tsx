@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useSound } from "@/lib/useSound";
 import { FaReact } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import {
@@ -84,6 +87,8 @@ function getTagIcon(tag: string) {
 }
 
 export function FeaturedProjects() {
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
+
   return (
     <main id="featured-projects" className=" animate-fade-in-up duration-1000 ">
       <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
@@ -145,6 +150,7 @@ export function FeaturedProjects() {
                   <div className="flex items-center flex-wrap gap-3 text-xs">
                     <a
                       href={project.demoUrl}
+                      onClick={playClick}
                       className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                     >
                       Live demo
@@ -152,6 +158,7 @@ export function FeaturedProjects() {
                     {project.repoUrl && (
                       <a
                         href={project.repoUrl}
+                        onClick={playClick}
                         className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                       >
                         View code
@@ -159,6 +166,7 @@ export function FeaturedProjects() {
                     )}
                     <a
                       href={`/projects/${project.slug}`}
+                      onClick={playClick}
                       className="text-xs font-medium text-primary underline-offset-4 hover:underline"
                     >
                       Read case study
@@ -167,6 +175,7 @@ export function FeaturedProjects() {
                 </div>
                 <Link
                   href={project.demoUrl}
+                  onClick={playClick}
                   className="relative h-40 md:h-56 rounded-md border border-border bg-background/40 overflow-hidden"
                 >
                   <Image
@@ -238,6 +247,7 @@ export function FeaturedProjects() {
                   <div className="flex items-center flex-wrap gap-3 text-xs">
                     <a
                       href={project.demoUrl}
+                      onClick={playClick}
                       className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                     >
                       Live demo
@@ -245,6 +255,7 @@ export function FeaturedProjects() {
                     {project.repoUrl && (
                       <a
                         href={project.repoUrl}
+                        onClick={playClick}
                         className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                       >
                         View code
@@ -253,6 +264,7 @@ export function FeaturedProjects() {
                     {project.repoUrl && (
                       <a
                         href={`/projects/${project.slug}`}
+                        onClick={playClick}
                         className="text-xs font-medium text-primary underline-offset-4 hover:underline"
                       >
                         Read case study

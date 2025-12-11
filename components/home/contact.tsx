@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useSound } from "@/lib/useSound";
 
 export function Contact() {
   const [message, setMessage] = useState("");
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
 
   const handleSendEmail = () => {
     const subject = encodeURIComponent("Portfolio contact");
@@ -62,7 +64,10 @@ export function Contact() {
         </div>
         <button
           type="button"
-          onClick={handleSendEmail}
+          onClick={() => {
+            playClick();
+            handleSendEmail();
+          }}
           className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Send email

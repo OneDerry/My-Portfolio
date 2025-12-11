@@ -1,7 +1,11 @@
+
+'use client'
 import Link from "next/link";
+import { useSound } from "@/lib/useSound";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
 
   return (
     <footer className="border-t border-border bg-background/80">
@@ -19,12 +23,14 @@ export function Footer() {
           <div className="flex flex-wrap gap-3">
             <a
               href="#contact"
+              onClick={playClick}
               className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90 hover-cta"
             >
               Contact section
             </a>
             <a
               href="mailto:mesiri.dev@gmail.com"
+              onClick={playClick}
               className="inline-flex items-center justify-center rounded-md border border-border px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground hover-cta"
             >
               Email me
@@ -43,12 +49,14 @@ export function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="https://github.com/OneDerry"
+                onClick={playClick}
                 className="transition-colors hover:text-foreground"
               >
                 GitHub
               </Link>
               <Link
                 href="https://www.linkedin.com/in/mesiri-olomu-0a4403153/"
+                onClick={playClick}
                 className="transition-colors hover:text-foreground"
               >
                 LinkedIn

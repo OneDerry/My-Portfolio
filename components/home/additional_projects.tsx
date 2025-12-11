@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaReact } from "react-icons/fa";
@@ -12,6 +14,7 @@ import {
 } from "@/components/ui/card";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
+import { useSound } from "@/lib/useSound";
 
 type AdditionalProject = {
   slug: string;
@@ -80,6 +83,8 @@ function getTechIcon(tag: string) {
 }
 
 export function AdditionalProjects() {
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
+
   return (
     <SlideSection
       from="left"
@@ -151,6 +156,7 @@ export function AdditionalProjects() {
                 {project.demoUrl && project.demoUrl !== "#" && (
                   <a
                     href={project.demoUrl}
+                    onClick={playClick}
                     className="rounded-md border border-border px-2.5 py-1 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     Live demo
@@ -159,6 +165,7 @@ export function AdditionalProjects() {
                 {project.demoUrl && (
                   <Link
                     href={`/projects/${project.slug}`}
+                    onClick={playClick}
                     className="text-[11px] font-medium text-primary underline-offset-4 hover:underline"
                   >
                     Case study
@@ -167,6 +174,7 @@ export function AdditionalProjects() {
                 {project.repoUrl && project.repoUrl !== "#" && (
                   <a
                     href={project.repoUrl}
+                    onClick={playClick}
                     className="rounded-md border border-border px-2.5 py-1 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     Repo

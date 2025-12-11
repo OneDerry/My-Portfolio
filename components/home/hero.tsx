@@ -11,8 +11,11 @@ import {
   TbBrandNextjs,
 } from "react-icons/tb";
 import { SlideSection } from "../ui/slide_section";
+import { useSound } from "@/lib/useSound";
 
 export function Hero() {
+  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
+
   const [stackText, setStackText] = useState("");
 
   useEffect(() => {
@@ -78,12 +81,14 @@ export function Hero() {
         </p>
         <div className="flex flex-wrap gap-3">
           <a
+            onClick={playClick}
             href="#featured-projects"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 hover-cta"
           >
             View Projects
           </a>
           <a
+            onClick={playClick}
             href="/Mesiri_Olomu_CV.pdf"
             className="inline-flex items-center justify-center rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground hover-cta"
           >
