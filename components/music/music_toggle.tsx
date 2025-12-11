@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Howl } from "howler";
 import { SONGS } from "./songs";
-import { PauseCircle } from "lucide-react";
+import { TbMusic, TbMusicOff } from "react-icons/tb";
 
 export function MusicToggle() {
   const [enabled, setEnabled] = useState(false);
@@ -83,9 +83,9 @@ export function MusicToggle() {
   const label = !hasSongs ? (
     "No tracks"
   ) : enabled ? (
-    '❌'
+    <TbMusicOff size={30} />
   ) : (
-    "To keep things cool"
+    <TbMusic size={30} />
   );
 
   return (

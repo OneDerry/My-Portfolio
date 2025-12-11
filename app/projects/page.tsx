@@ -9,6 +9,20 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    slug: "change-for-humanity",
+    title: "Change For Humanity",
+    summary:
+      "A website for a non-profit organization focused on providing resources and support to those in need.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Redux"],
+  },
+  {
+    slug: "riser-school",
+    title: "Riser School",
+    summary:
+      "A website for a school focused on providing resources and support to those in need.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+  },
+  {
     slug: "ecommerce-store",
     title: "E-commerce storefront",
     summary:
@@ -29,20 +43,6 @@ const projects = [
   //     "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
   //   tags: ["React Native", "TypeScript"],
   // },
-  {
-    slug: "change-for-humanity",
-    title: "Change For Humanity",
-    summary:
-      "A website for a non-profit organization focused on providing resources and support to those in need.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Redux"],
-  },
-  {
-    slug: "riser-school",
-    title: "Riser School",
-    summary:
-      "A website for a school focused on providing resources and support to those in need.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-  },
 ];
 
 export default function ProjectsPage() {

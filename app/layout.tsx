@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { MusicToggle } from "@/components/music/music_toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,13 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="pt-16">{children}</main>
+          <main className="pt-16 relative">
+            {children}
+            <div className="fixed bottom-20 right-10 ">
+              <MusicToggle />
+            </div>
+          </main>
+
           <Footer />
         </Providers>
       </body>

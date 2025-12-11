@@ -8,7 +8,6 @@ import { useSound } from "@/lib/useSound";
 import { toggleTheme } from "../lib/themeSlice";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { MusicToggle } from "./music/music_toggle";
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -36,7 +35,6 @@ export function Header() {
             <div className="absolute bottom-0 right-0 h-2 w-2 bg-green-500 rounded-full"></div>
           </div>
           <span>Mesiri Olomu</span>
-          <MusicToggle />
         </Link>
 
         {/* Desktop nav (center column) */}
