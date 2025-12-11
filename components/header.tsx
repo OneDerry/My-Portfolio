@@ -71,7 +71,8 @@ export function Header() {
             Buy me a coffee
           </a>
           <a
-            href="https://t.me/grangle"
+            // href="https://t.me/grangle"
+            href="https://wa.me/qr/2KNDQX5NPOFVD1"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center justify-center rounded-md bg-emerald-500/90 px-3 py-1.5 text-xs font-medium text-emerald-50 transition-colors hover:bg-emerald-500 hover-cta"
@@ -139,7 +140,8 @@ export function Header() {
                   Contact
                 </Link>
                 <a
-                  href="https://t.me/grangle"
+                  // href="https://t.me/grangle"
+                  href="https://wa.me/qr/2KNDQX5NPOFVD1"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setIsSheetOpen(false)}
