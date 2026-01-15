@@ -287,7 +287,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   // Get all project slugs in order
   const projectSlugs: string[] = Object.keys(projects);
-  const currentIndex = projectSlugs.indexOf(slug);
+  const currentIndex = projectSlugs.indexOf(String(slug));
   const nextIndex = (currentIndex + 1) % projectSlugs.length;
   const nextSlug = projectSlugs[nextIndex];
   const nextProject = projects[nextSlug];
