@@ -12,6 +12,7 @@ import {
 } from "react-icons/tb";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const featuredProjects = [
   {
@@ -66,7 +67,7 @@ const liveProjects = [
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript"],
     timeline: "Ongoing",
-    demoUrl: "https://riser-kohl.vercel.app/",
+    demoUrl: "https://riserschool.com.ng/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
   },
@@ -153,7 +154,7 @@ export function FeaturedProjects() {
                       onClick={playClick}
                       className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                     >
-                      Live demo
+                      Live Build
                     </a>
                     {project.repoUrl && (
                       <a
@@ -250,7 +251,7 @@ export function FeaturedProjects() {
                       onClick={playClick}
                       className="rounded-md border border-border px-3 py-1.5 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                     >
-                      Live demo
+                      Live Build
                     </a>
                     {project.repoUrl && (
                       <a
@@ -287,6 +288,15 @@ export function FeaturedProjects() {
             ))}
           </div>
         </SlideSection>
+      </div>
+      <div className="flex items-center justify-center mt-4">
+        <Link
+          href="/projects"
+          onClick={playClick}
+          className="w-fit rounded-lg border border-border bg-card px-6 py-2 flex items-center gap-2"
+        >
+          View Projects <FaArrowRightLong />
+        </Link>
       </div>
     </main>
   );

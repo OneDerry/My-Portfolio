@@ -159,7 +159,7 @@ export function AdditionalProjects() {
                     onClick={playClick}
                     className="rounded-md border border-border px-2.5 py-1 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    Live demo
+                    Live Build
                   </a>
                 )}
                 {project.demoUrl && (

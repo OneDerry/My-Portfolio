@@ -3,7 +3,29 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const projects = {
+type Project = {
+  title: string;
+  timeline: string;
+  tagline: string;
+  tech: string[];
+  demoUrl: string;
+  repoUrl: string;
+  thumbnail: string;
+  img1: string;
+  img2: string;
+  img3: string;
+  overview: string;
+  problem: string | string[];
+  solution: string | string[];
+  learning: string;
+  keyFeatures: string[];
+};
+
+type Projects = {
+  [key: string]: Project;
+};
+
+const projects: Projects = {
   "ecommerce-store": {
     title: "E-commerce storefront",
     timeline: "2024",
@@ -96,6 +118,7 @@ const projects = {
   },
   "sample-project": {
     title: "Sample project",
+    timeline: "2024",
     tagline: "Placeholder case study wired from the homepage featured section.",
     tech: ["React", "TypeScript"],
     demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
@@ -166,7 +189,7 @@ const projects = {
     tagline:
       "An educational platform with integrated payment processing for seamless tuition management.",
     tech: ["React", "TypeScript", "Vite", "Paystack"],
-    demoUrl: "https://riser-kohl.vercel.app/",
+    demoUrl: "https://riserschool.com.ng/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
     img1: "/riser2.png",
@@ -237,7 +260,6 @@ const projects = {
 type Slug = keyof typeof projects;
 
 interface CaseStudyPageProps {
-  // Next 16: params is a Promise
   params: Promise<{ slug: Slug }>;
 }
 
@@ -262,6 +284,13 @@ export async function generateMetadata({
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   const project = projects[slug];
+
+  // Get all project slugs in order
+  const projectSlugs: string[] = Object.keys(projects);
+  const currentIndex = projectSlugs.indexOf(slug);
+  const nextIndex = (currentIndex + 1) % projectSlugs.length;
+  const nextSlug = projectSlugs[nextIndex];
+  const nextProject = projects[nextSlug];
 
   if (!project) {
     return (
@@ -297,9 +326,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <ArrowLeftToLine className="group-hover:-translate-x-1 transition-all" />{" "}
             Back to projects
           </Link>
-          <span className="text-xs text-muted-foreground">
-            Next project · placeholder
-          </span>
+          <Link
+            href={`/projects/${nextSlug}`}
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1 group"
+          >
+            Next project · {nextProject.title}
+            <ArrowLeftToLine className="w-3 h-3 rotate-180 group-hover:translate-x-1 transition-all" />
+          </Link>
         </div>
         {/* Header */}
         <header className="space-y-4">
@@ -466,7 +499,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               href={project?.demoUrl}
               className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
-              Live demo
+              Live Build
             </Link>
             <Link
               href={project?.repoUrl}
