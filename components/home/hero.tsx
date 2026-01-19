@@ -14,7 +14,10 @@ import { SlideSection } from "../ui/slide_section";
 import { useSound } from "@/lib/useSound";
 
 export function Hero() {
-  const { play: playClick } = useSound("/sounds/click.wav", 0.5);
+  const { play: playClick }: { play: () => void } = useSound(
+    "/sounds/click.wav",
+    0.5,
+  );
 
   const [stackText, setStackText] = useState("");
 

@@ -9,7 +9,7 @@ export function About() {
     >
       <div className="relative h-56 md:h-96 rounded-md border border-blue-500/60 shadow-[0_0_15px_rgba(59,130,246,0.3)] bg-background/40 overflow-hidden">
         <Image
-          src="/abjdev2.png"
+          src="/MyProfilePic.JPG"
           alt="Mesiri Olomu"
           fill
           className="object-cover"
@@ -20,10 +20,11 @@ export function About() {
           About
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-          Professional code is what i do, of course that comes with turning product
-          requirements into small, predictable UI building blocks. My work leans
-          on TypeScript, React, Redux, and modern CSS utilities to keep
-          codebases readable and scalable. You should see how i arrange my code.
+          Professional code is what i do, of course that comes with turning
+          product requirements into small, predictable UI building blocks. My
+          work leans on TypeScript, React, Redux, and modern CSS utilities to
+          keep codebases readable and scalable. You should see how i arrange my
+          code.
         </p>
         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
           When I&apos;m not coding, I enjoy exploring new technologies,

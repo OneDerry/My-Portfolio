@@ -26,7 +26,7 @@ export function Header() {
           <div className="bg-blue-500 relative rounded-full flex items-center p-[1.5px]">
             <span className="relative h-8 w-8 rounded-full border border-border overflow-hidden">
               <Image
-                src="/me.jpeg"
+                src="/MyProfilePic.JPG"
                 alt="Mesiri Olomu"
                 fill
                 sizes="32px"

@@ -66,7 +66,7 @@ const liveProjects = [
     summary:
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript"],
-    timeline: "Ongoing",
+    timeline: "Completed",
     demoUrl: "https://riserschool.com.ng/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
