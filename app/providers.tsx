@@ -15,6 +15,7 @@ function ThemeWatcher({ children }: { children: ReactNode }) {
     } else {
       root.classList.remove("dark");
     }
+    localStorage.setItem("theme", mode);
   }, [mode]);
 
   return children;

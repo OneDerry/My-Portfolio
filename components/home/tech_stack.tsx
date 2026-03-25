@@ -75,6 +75,7 @@ export function TechStack() {
             <SlideSection
               key={tool.name}
               from={isOddPosition ? "left" : undefined}
+              aria-label={`${tool.name} — ${tool.level}`}
               className="flex flex-col items-center justify-between rounded-xl border border-border/30 bg-card/60 px-5 py-5 shadow-[0_0_0_1px_rgba(15,23,42,0.4)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
             >
               <div className="flex-1">

@@ -20,17 +20,28 @@ export function About() {
           About
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-          Professional code is what i do, of course that comes with turning
-          product requirements into small, predictable UI building blocks. My
-          work leans on TypeScript, React, Redux, and modern CSS utilities to
-          keep codebases readable and scalable. You should see how i arrange my
-          code.
-        </p>
-        <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-          When I&apos;m not coding, I enjoy exploring new technologies,
-          contributing to open-source projects, and staying up-to-date with the
-          latest frontend trends. I believe in writing clean, well-documented
-          code that other developers can easily understand and maintain.
+          Professional code is what I do, and that comes with turning product
+          requirements into small, predictable UI building blocks. My work leans
+          on TypeScript, React, Redux, and modern CSS utilities to keep
+          codebases readable and scalable. You should see how I arrange my code.
+          <br />
+          I&apos;m a Frontend Developer. I code with my brain and use AI to
+          speed up what I already have — I think of AI as a multiplier. Frontend
+          is interesting, and I picked up interest in 2020. I started learning
+          the basics and soon found myself writing React. I asked a lot of
+          questions, met a lot of friends who gave me tips here and there, and
+          one I&apos;ll never forget is a friend of mine telling me &quot;In
+          CSS, everything is a box.&quot; The moment I heard that, I looked at
+          CSS differently from then on, and styling just stuck. There&apos;s
+          nothing I can&apos;t build. JavaScript, TypeScript — what&apos;s the
+          difference? It&apos;s in the name: it&apos;s scripting with types. I
+          call TypeScript a safe JavaScript. If anyone asks me, I prefer React
+          to Next. I understand React may come with more boilerplate, but I just
+          love the flexibility. I understood the structure of frontend better
+          with React — the why&apos;s and how&apos;s. I picked up my first
+          full-time job in 2024 after finishing uni in 2023. Yes, I studied
+          Economics, but tech said &quot;no, come my way.&quot; So here I am.
+          Come, let&apos;s build.
         </p>
       </div>
     </SlideSection>

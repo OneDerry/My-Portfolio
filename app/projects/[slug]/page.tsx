@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+type TechStack = Record<string, string>;
+
 type Project = {
   title: string;
   timeline: string;
@@ -19,6 +21,7 @@ type Project = {
   solution: string | string[];
   learning: string;
   keyFeatures: string[];
+  techStack?: TechStack;
 };
 
 type Projects = {
@@ -40,7 +43,7 @@ const projects: Projects = {
     learning:
       "Improved understanding of React state management and Next.js routing patterns.",
     solution: [
-      "Fixing the next/image redirect / weird behavior — I discovered that the real problem wasn’t routing at all, it was layout. next/image with fill must have a parent with position: relative and explicit width/height (or Tailwind utilities like relative, w-…, h-…). Once every Image using fill was wrapped in a correctly sized, relatively positioned container (for example in ProductCard, the hero carousel and side cards in homeContent, and the cart thumbnails), the ‘redirecting to home’ and other weird behavior stopped.",
+      "Fixing the next/image redirect / weird behavior — I discovered that the real problem wasn't routing at all, it was layout. next/image with fill must have a parent with position: relative and explicit width/height (or Tailwind utilities like relative, w-…, h-…). Once every Image using fill was wrapped in a correctly sized, relatively positioned container (for example in ProductCard, the hero carousel and side cards in homeContent, and the cart thumbnails), the 'redirecting to home' and other weird behavior stopped.",
       "Structuring global state and API calls — I used Redux Toolkit slices for clear responsibilities: cartSlice for items, totals, and localStorage sync (loadCartFromStorage, addToCart, updateQuantity, etc.), and authSlice for user, token, and loading/error state with RTK Query matchers wired to login, signup, and getCurrentUser. All network logic lives in apiSlice (auth, products, orders, reviews, analytics) with a baseQueryWithReauth handler to deal with 401s and backend failures.",
       "Persistent cart and initial app setup — A small storage helper and calculateCartTotal keep cart items and totals in sync with localStorage. In the root Providers component, the app is wrapped with <Provider store={store}>, and an AppInitializer hydrates the cart from storage and triggers useGetCurrentUserQuery whenever a token exists, so the app boots with a consistent cart and auth state.",
       "Auth forms and validation — Login and signup pages use react-hook-form plus Zod schemas (loginSchema and signupSchema) together with shadcn form components. On submit, they call login or signup from useAuth, track loading and error states, and redirect to / on success, giving a smooth, validated auth flow on top of the Redux + RTK Query stack.",
@@ -49,7 +52,7 @@ const projects: Projects = {
       "Aisle 3 is a modern e‑commerce web application built with the Next.js App Router.It focuses on selling gadgets and electronics, with a clean, product‑first UI and a smooth shopping experience.",
     problem: [
       "next/image causing unexpected navigation (redirecting to home) — Using the Next.js Image component (especially with fill) sometimes caused subtle, unexpected navigation. In a few layouts it behaved like an invisible link and would send me back to the home page, which at first looked like a routing bug rather than a layout issue.",
-      "Layout and positioning issues with Image + fill — Across components like ProductCard (components/products/ProductCard.tsx), the hero carousel and side cards (app/homeContent.tsx), and cart thumbnails (app/cart/page.tsx), Image with fill depended heavily on a correctly sized, relatively positioned parent. When that wasn’t set up, images would overflow, collapse, or render inconsistently.",
+      "Layout and positioning issues with Image + fill — Across components like ProductCard (components/products/ProductCard.tsx), the hero carousel and side cards (app/homeContent.tsx), and cart thumbnails (app/cart/page.tsx), Image with fill depended heavily on a correctly sized, relatively positioned parent. When that wasn't set up, images would overflow, collapse, or render inconsistently.",
       "State and data flow complexity — Coordinating Redux slices (cartSlice, authSlice, productSlice, orderSlice), the RTK Query API layer (apiSlice), and custom hooks (useAuth, useProducts, useProduct) made data flow non-trivial. Tracking down wrong data or empty lists often meant debugging both the API layer and the slice logic at the same time.",
       "Auth flow and token persistence — Designing a reliable auth flow with validated login/sign-up forms (Zod + React Hook Form), localStorage-based token persistence, and auto-verifying the current user on app load (useGetCurrentUserQuery in Providers and authSlice extraReducers) took several iterations to avoid inconsistent or out-of-sync auth state.",
     ],
@@ -60,6 +63,11 @@ const projects: Projects = {
       "Responsive design optimized for mobile, tablet, and desktop.",
       "Order history and user account management.",
     ],
+    techStack: {
+      "UI layer": "React, TypeScript, Next.js",
+      "State": "Redux Toolkit, RTK Query",
+      "Styling": "Tailwind CSS, shadcn/ui",
+    },
   },
   "admin-dashboard": {
     title: "Admin dashboard",
@@ -88,69 +96,20 @@ const projects: Projects = {
       "Responsive sidebar navigation with collapsible sections.",
       "Export functionality for reports and data.",
     ],
-  },
-  "react-native-app": {
-    title: "React Native app",
-    timeline: "ONGOING",
-    tagline: "Mobile client mirroring the web experience with shared logic.",
-    tech: ["React Native", "TypeScript"],
-    demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
-    repoUrl: "https://github.com/OneDerry/E-Commerce",
-    thumbnail: "/thumbnail/ecommerce-thumbnail.png",
-    img1: "/ecommm1.png",
-    img2: "/ecommm2.png",
-    img3: "/ecommm3.png",
-    solution:
-      "Implemented shared business logic between web and mobile platforms to reduce maintenance overhead.",
-    learning:
-      "Explored cross-platform development patterns and shared code architecture.",
-    overview:
-      "A cross-platform mobile application that mirrors the web experience while sharing business logic for consistency and reduced maintenance.",
-    problem:
-      "The client needed a mobile presence that provided the same functionality as their web platform while maintaining a consistent user experience across devices.",
-    keyFeatures: [
-      "Native iOS and Android apps from a single codebase.",
-      "Shared business logic with the web application.",
-      "Offline-first architecture with local data caching.",
-      "Push notifications for order updates and promotions.",
-      "Smooth animations and native-feeling interactions.",
-    ],
-  },
-  "sample-project": {
-    title: "Sample project",
-    timeline: "2024",
-    tagline: "Placeholder case study wired from the homepage featured section.",
-    tech: ["React", "TypeScript"],
-    demoUrl: "https://e-commerce-4idffu9cd-onederrys-projects.vercel.app/",
-    repoUrl: "https://github.com/OneDerry/E-Commerce",
-    thumbnail: "/thumbnail/ecommerce-thumbnail.png",
-    img1: "/c1.png",
-    img2: "/c2.png",
-    img3: "/c3.png",
-    solution:
-      "Created a reusable case study template with consistent structure and responsive design.",
-    learning:
-      "Used this as an opportunity to practice case study writing and layout design.",
-    overview:
-      "A placeholder project used to demonstrate the case study layout and structure.",
-    problem:
-      "This placeholder project demonstrates the structure and components of a full case study page.",
-    keyFeatures: [
-      "Reusable case study template structure.",
-      "Responsive layout for all screen sizes.",
-      "Clean typography and visual hierarchy.",
-      "Easy-to-update content sections.",
-      "Consistent design language across projects.",
-    ],
+    techStack: {
+      "UI layer": "React, TypeScript",
+      "Data viz": "Charts, KPI cards",
+      "Layout": "Table-first, responsive sidebar",
+    },
   },
   "change-for-humanity": {
     title: "Change For Humanity",
     timeline: "2023-2025",
     tagline:
       "A nonprofit platform connecting donors with impactful humanitarian causes worldwide.",
-    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"], // Update with actual stack
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     demoUrl: "https://changeforhumanity.org",
-    repoUrl: "", // Add if public
+    repoUrl: "",
     thumbnail: "/c1.png",
     img1: "/c2.png",
     img2: "/c3.png",
@@ -182,6 +141,11 @@ const projects: Projects = {
       "Mobile-responsive design for on-the-go donors.",
       "Social sharing integration for campaign visibility.",
     ],
+    techStack: {
+      "UI layer": "React, TypeScript, Vite",
+      "Styling": "Tailwind CSS",
+      "Approach": "Mobile-first, SPA",
+    },
   },
   "riser-school": {
     title: "Riser School",
@@ -218,6 +182,11 @@ const projects: Projects = {
       "Payment history and receipt generation.",
       "Mobile-friendly interface for parents and students.",
     ],
+    techStack: {
+      "UI layer": "React, TypeScript, Vite",
+      "Payments": "Paystack",
+      "Styling": "Tailwind CSS",
+    },
   },
   "coffee-website": {
     title: "Coffee Haven",
@@ -254,6 +223,140 @@ const projects: Projects = {
       "Warm, brand-aligned visual design throughout.",
     ],
     timeline: "2025",
+    techStack: {
+      "UI layer": "React, TypeScript, Next.js",
+      "Styling": "Tailwind CSS",
+      "Approach": "SSR, product-first layout",
+    },
+  },
+  "selas": {
+    title: "Selas",
+    timeline: "Ongoing",
+    tagline:
+      "A campus-first marketplace where students buy, sell, and trade items safely within their university community.",
+    tech: ["React Native", "TypeScript"],
+    demoUrl: "#",
+    repoUrl: "https://github.com/OneDerry/SELAS",
+    thumbnail: "/file.svg",
+    img1: "/file.svg",
+    img2: "/file.svg",
+    img3: "/file.svg",
+    overview:
+      "Selas is a React Native mobile marketplace built for university students. It provides a trusted, campus-scoped environment where students can list items for sale, browse listings from peers, message sellers directly, and complete transactions — all without leaving the app. The platform is designed to replace scattered group chats and notice boards with a dedicated, searchable commerce experience.",
+    problem: [
+      "Students relied on fragmented channels — WhatsApp groups, Twitter threads, notice boards — to buy and sell items, making discovery unreliable.",
+      "No trust layer existed for peer-to-peer transactions on campus, leading to scams and no-shows.",
+      "Existing general-purpose marketplaces like Facebook Marketplace lacked campus-specific context, making it hard to find nearby, relevant listings.",
+      "Sellers had no structured way to manage listings, track interest, or communicate with potential buyers in one place.",
+    ],
+    solution: [
+      "Built a cross-platform React Native app with TypeScript for a native experience on both iOS and Android from a single codebase.",
+      "Designed a campus-scoped feed so students only see listings from verified peers within their university community.",
+      "Implemented in-app messaging so buyers and sellers can negotiate and coordinate handoffs without sharing personal contact details.",
+      "Created a streamlined listing flow where sellers can photograph items, set prices, add descriptions, and publish in under a minute.",
+    ],
+    learning:
+      "Deepened my React Native skills in building a marketplace with real-time messaging and image-heavy listing feeds. Learned to balance feature richness with mobile performance constraints, and gained experience designing trust and safety patterns for peer-to-peer platforms.",
+    keyFeatures: [
+      "Campus-scoped marketplace feed with category filtering and search.",
+      "Listing creation with photo upload, pricing, and item descriptions.",
+      "In-app messaging between buyers and sellers.",
+      "User profiles with listing history and ratings.",
+      "Push notifications for new messages and listing updates.",
+      "Cross-platform support for iOS and Android.",
+    ],
+    techStack: {
+      "Framework": "React Native, TypeScript",
+      "Platform": "iOS, Android (Expo)",
+      "Features": "Real-time messaging, image uploads",
+    },
+  },
+  "grey-auction": {
+    title: "Grey Auction",
+    timeline: "Ongoing",
+    tagline:
+      "A live auction marketplace connecting buyers and sellers through real-time bidding, with role-based dashboards and end-to-end transaction management.",
+    tech: ["Next.js", "TypeScript", "Redux"],
+    demoUrl: "",
+    repoUrl: "",
+    thumbnail: "/auction_home.png",
+    img1: "/auction1.png",
+    img2: "/auction2.png",
+    img3: "/auction3.png",
+    overview:
+      "Grey Auctions is a full-featured online auction platform where buyers compete in real-time bidding and sellers list items to reach genuine buyers. The platform spans multiple product categories — art, construction, electronics, and transport & logistics — and includes dedicated dashboards for buyers, sellers, and administrators. Each role has tailored views for managing bids, listings, invoices, payments, and analytics.",
+    problem: [
+      "No centralised platform existed for sellers to list across multiple categories and reach a wide pool of competing buyers in real time.",
+      "Buyers needed a way to track active bids, winning status, and auction timers across multiple items simultaneously.",
+      "Sellers lacked visibility into revenue trends, buyer messages, and pending requests without switching between tools.",
+      "Admins required a single surface to manage auctions, bids, users, banners, FAQs, and content policies without direct database access.",
+    ],
+    solution: [
+      "Built a marketplace frontend with Next.js and TypeScript featuring category-based browsing, search, and featured auction carousels on the homepage.",
+      "Implemented a buyer dashboard with KPI cards (active bids, winning, outbid, ending soon), an active auctions table with live status indicators, and a recent invoices view with payment tracking.",
+      "Created a seller dashboard with revenue analytics (sales vs. expenses over 12 months), a messages inbox, listed auctions management, and a multi-step seller onboarding flow.",
+      "Designed an admin dashboard with platform-wide KPIs, revenue charts, registered user breakdowns, auction activity tracking, and sidebar navigation for managing buyers, sellers, categories, banners, FAQs, and policies.",
+    ],
+    learning:
+      "Gained deep experience architecting role-based interfaces where the same data (auctions, bids, invoices) is presented differently depending on user context. Improved my approach to building dashboard layouts with real-time status indicators and multi-panel views using Redux for cross-component state coordination.",
+    keyFeatures: [
+      "Real-time auction bidding with live countdown timers and status indicators.",
+      "Category-based browsing across art, construction, electronics, and transport.",
+      "Buyer dashboard with bid tracking, wishlist, purchase history, and auction alerts.",
+      "Seller dashboard with revenue analytics, messages, and auction management.",
+      "Admin panel with platform KPIs, user management, and content moderation.",
+      "Multi-step seller onboarding with personal details and verification.",
+      "Invoice and payment tracking with status labels across all roles.",
+      "Internationalisation support with language switching.",
+    ],
+    techStack: {
+      "UI layer": "Next.js, TypeScript",
+      "State": "Redux Toolkit",
+      "Features": "Role-based dashboards, real-time bidding",
+    },
+  },
+  "sero": {
+    title: "Sero-revamp",
+    timeline: "Completed",
+    tagline:
+      "A bold, zero-sugar soda brand brought to life with a modern e-commerce storefront and playful visual identity.",
+    tech: ["Next.js", "TypeScript", "Redux"],
+    demoUrl: "https://sero-creative.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/SERO-revamp",
+    thumbnail: "/sero_home.png",
+    img1: "/sero_home.png",
+    img2: "/sero_home.png",
+    img3: "/sero_home.png",
+    overview:
+      "Sero is a revamped e-commerce website for a zero-sugar soda brand. The site serves as both a marketing platform and storefront, showcasing four bold flavours with a clean, modern design. It features product browsing, a shopping cart, a store locator, wholesale purchasing options, and a flavour discovery quiz — all built on Next.js for fast, SEO-friendly performance.",
+    problem: [
+      "The original brand site lacked a cohesive visual identity and failed to communicate the product's value proposition clearly.",
+      "There was no integrated shopping experience — users had to navigate away to purchase products.",
+      "Mobile usability was poor, resulting in high bounce rates from the brand's primary audience.",
+      "Content updates and product launches required manual developer intervention each time.",
+    ],
+    solution: [
+      "Rebuilt the site from scratch with Next.js and TypeScript for server-rendered performance and type safety across the codebase.",
+      "Designed a product-first layout with a hero section, flavour showcase, and inline cart flow so users can browse and buy without friction.",
+      "Implemented a mobile-first responsive design with smooth section transitions using wavy SVG dividers and gradient accents.",
+      "Structured the content and product data to support easy updates for new flavours, blog posts, and promotional campaigns.",
+    ],
+    learning:
+      "Strengthened my ability to build brand-driven e-commerce experiences where visual storytelling and conversion flow need to work together. Gained experience managing product state with Redux alongside Next.js server-side rendering.",
+    keyFeatures: [
+      "Product catalog showcasing four bold zero-sugar soda flavours.",
+      "Integrated shopping cart with add/remove and checkout flow.",
+      "Flavour discovery quiz to guide users to their ideal product.",
+      "Store locator for finding physical retail locations.",
+      "Wholesale purchasing flow for bulk orders.",
+      "Newsletter signup with discount incentive integration.",
+      "Blog section for brand storytelling and content marketing.",
+    ],
+    techStack: {
+      "UI layer": "Next.js, TypeScript",
+      "State": "Redux Toolkit",
+      "Styling": "CSS Modules, SVG transitions",
+    },
   },
 } as const;
 
@@ -278,6 +381,11 @@ export async function generateMetadata({
   return {
     title: `${project.title} · Frontend case study`,
     description: project.tagline,
+    openGraph: {
+      title: `${project.title} · Frontend case study`,
+      description: project.tagline,
+      images: [{ url: project.thumbnail }],
+    },
   };
 }
 
@@ -432,17 +540,29 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
             Tech stack
           </h2>
-          <div className="grid gap-3 md:grid-cols-3">
-            <div className="rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground">
-              UI layer: React, TypeScript, Next.js
+          {project.techStack ? (
+            <div className="grid gap-3 md:grid-cols-3">
+              {Object.entries(project.techStack).map(([label, value]) => (
+                <div
+                  key={label}
+                  className="rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground"
+                >
+                  {label}: {value}
+                </div>
+              ))}
             </div>
-            <div className="rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground">
-              State: Redux Toolkit, local component state
+          ) : (
+            <div className="flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+              {project.tech.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-border px-2 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-            <div className="rounded-md border border-border bg-card px-4 py-3 text-sm text-foreground">
-              Styling: Tailwind CSS, shadcn/ui
-            </div>
-          </div>
+          )}
         </section>
 
         {/* Screenshots */}
@@ -490,25 +610,32 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </section>
 
         {/* Links */}
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
-            Links
-          </h2>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href={project?.demoUrl}
-              className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Live Build
-            </Link>
-            <Link
-              href={project?.repoUrl}
-              className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              GitHub repo
-            </Link>
-          </div>
-        </section>
+        {(project.demoUrl && project.demoUrl !== "#" && project.demoUrl !== "") ||
+        (project.repoUrl && project.repoUrl !== "#" && project.repoUrl !== "") ? (
+          <section className="space-y-3">
+            <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
+              Links
+            </h2>
+            <div className="flex flex-wrap gap-3 text-sm">
+              {project.demoUrl && project.demoUrl !== "#" && project.demoUrl !== "" && (
+                <Link
+                  href={project.demoUrl}
+                  className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  Live Build
+                </Link>
+              )}
+              {project.repoUrl && project.repoUrl !== "#" && project.repoUrl !== "" && (
+                <Link
+                  href={project.repoUrl}
+                  className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  GitHub repo
+                </Link>
+              )}
+            </div>
+          </section>
+        ) : null}
       </div>
     </main>
   );

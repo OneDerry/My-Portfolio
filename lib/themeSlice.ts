@@ -6,8 +6,16 @@ export interface ThemeState {
   mode: ThemeMode;
 }
 
+function getInitialTheme(): ThemeMode {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") return stored;
+  }
+  return "dark";
+}
+
 const initialState: ThemeState = {
-  mode: "dark",
+  mode: getInitialTheme(),
 };
 
 const themeSlice = createSlice({

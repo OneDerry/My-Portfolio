@@ -1,11 +1,9 @@
 "use client";
 
-import { FaReact } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
+import { SiReact, SiTypescript, SiNextdotjs } from "react-icons/si";
+import { ArrowRight } from "lucide-react";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
-import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
 import { useSound } from "@/lib/useSound";
 
@@ -48,12 +46,12 @@ function getTagIcon(tag: string) {
   const normalized = tag.toLowerCase();
 
   if (normalized.includes("next"))
-    return <TbBrandNextjs className="h-3.5 w-3.5" />;
+    return <SiNextdotjs className="h-3.5 w-3.5" />;
   if (normalized.includes("react native"))
-    return <TbBrandReactNative className="h-3.5 w-3.5" />;
-  if (normalized.includes("react")) return <FaReact className="h-3.5 w-3.5" />;
+    return <SiReact className="h-3.5 w-3.5" />;
+  if (normalized.includes("react")) return <SiReact className="h-3.5 w-3.5" />;
   if (normalized.includes("type"))
-    return <BiLogoTypescript className="h-3.5 w-3.5" />;
+    return <SiTypescript className="h-3.5 w-3.5" />;
 
   return null;
 }
@@ -118,7 +116,7 @@ export function Experience() {
           onClick={playClick}
           className="w-fit rounded-lg border border-border bg-card px-6 py-2 flex items-center gap-2"
         >
-          View LinkedIn <FaArrowRightLong />
+          View LinkedIn <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </SlideSection>

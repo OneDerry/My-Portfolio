@@ -36,6 +36,27 @@ const projects = [
       "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
     tags: ["React", "TypeScript", "Charts", "Redux"],
   },
+  {
+    slug: "sero",
+    title: "Sero-revamp",
+    summary:
+      "A bold, zero-sugar soda brand brought to life with a modern e-commerce storefront and playful visual identity.",
+    tags: ["Next.js", "TypeScript", "Redux"],
+  },
+  {
+    slug: "selas",
+    title: "Selas",
+    summary:
+      "A student marketplace app enabling students to buy, sell, and trade items within their campus community. Features a safe, user-friendly platform for listings, messaging, and easy campus-focused commerce.",
+    tags: ["React Native", "TypeScript"],
+  },
+  {
+    slug: "grey-auction",
+    title: "Grey Auction",
+    summary:
+      "A real-time auction marketplace where buyers compete in live bids and sellers reach genuine buyers — with dedicated dashboards for buyers, sellers, and admins.",
+    tags: ["Next.js", "TypeScript", "Redux"],
+  },
   // {
   //   slug: "react-native-app",
   //   title: "React Native app",

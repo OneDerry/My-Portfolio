@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MusicToggle } from "@/components/music/music_toggle";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,9 +18,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mesiriolomu.com"),
   title: "Mesiri Olomu Portfolio",
   description:
     "Personal portfolio website showcasing my work and projects. Full-stack developer specializing in React, TypeScript, and modern web technologies.",
+  openGraph: {
+    siteName: "Mesiri Olomu Portfolio",
+    type: "website",
+    title: "Mesiri Olomu Portfolio",
+    description:
+      "Frontend developer specializing in React, TypeScript, and modern web technologies.",
+    images: [{ url: "/MyProfilePic.JPG" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mesiri Olomu Portfolio",
+    description:
+      "Frontend developer specializing in React, TypeScript, and modern web technologies.",
+  },
 };
 
 export default function RootLayout({
@@ -43,6 +59,7 @@ export default function RootLayout({
 
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

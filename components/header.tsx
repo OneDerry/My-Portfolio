@@ -85,6 +85,7 @@ export function Header() {
             href="https://wa.me/qr/2KNDQX5NPOFVD1"
             target="_blank"
             rel="noreferrer"
+            aria-label="Hire me via WhatsApp (opens in new tab)"
             className="inline-flex items-center justify-center rounded-md bg-emerald-500/90 px-3 py-1.5 text-xs font-medium text-emerald-50 transition-colors hover:bg-emerald-500 hover-cta"
           >
             Hire Me
@@ -154,6 +155,7 @@ export function Header() {
                   href="https://wa.me/qr/2KNDQX5NPOFVD1"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Hire me via WhatsApp (opens in new tab)"
                   onClick={() => setIsSheetOpen(false)}
                   className="rounded-md px-2 py-2 transition-colors hover:bg-accent hover:text-foreground"
                 >

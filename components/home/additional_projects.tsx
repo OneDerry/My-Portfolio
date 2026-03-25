@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaReact } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
-import { TbBrandNextjs } from "react-icons/tb";
+import { SiReact, SiTypescript, SiNextdotjs } from "react-icons/si";
 import {
   Card,
   CardHeader,
@@ -74,10 +72,10 @@ function getTechIcon(tag: string) {
   const normalized = tag.toLowerCase();
 
   if (normalized.includes("next"))
-    return <TbBrandNextjs className="h-3.5 w-3.5" />;
+    return <SiNextdotjs className="h-3.5 w-3.5" />;
   if (normalized.includes("type"))
-    return <BiLogoTypescript className="h-3.5 w-3.5" />;
-  if (normalized.includes("react")) return <FaReact className="h-3.5 w-3.5" />;
+    return <SiTypescript className="h-3.5 w-3.5" />;
+  if (normalized.includes("react")) return <SiReact className="h-3.5 w-3.5" />;
 
   return null;
 }

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Howl } from "howler";
 import { SONGS } from "./songs";
-import { TbMusic, TbMusicOff } from "react-icons/tb";
+import { Music, VolumeOff } from "lucide-react";
 
 export function MusicToggle() {
   const [enabled, setEnabled] = useState(false);
@@ -32,39 +32,10 @@ export function MusicToggle() {
     }
 
     if (howlRef.current) {
-      return;
-    }
-
-    const createHowl = (index: number) => {
-      const sound = new Howl({
-        src: [SONGS[index]],
-        volume: 0.4,
-        html5: true,
-        onend: () => {
-          const nextIndex = getNextIndex();
-          setCurrentIndex(nextIndex);
-        },
-      });
-      howlRef.current = sound;
-      sound.play();
-    };
-
-    createHowl(currentIndex);
-
-    return () => {
-      howlRef.current?.stop();
-      howlRef.current?.unload();
+      howlRef.current.stop();
+      howlRef.current.unload();
       howlRef.current = null;
-    };
-  }, [enabled, hasSongs, currentIndex, getNextIndex]);
-
-  useEffect(() => {
-    if (!enabled || !hasSongs) return;
-    if (!howlRef.current) return;
-    if (!SONGS[currentIndex]) return;
-
-    howlRef.current.stop();
-    howlRef.current.unload();
+    }
 
     const sound = new Howl({
       src: [SONGS[currentIndex]],
@@ -75,17 +46,22 @@ export function MusicToggle() {
         setCurrentIndex(nextIndex);
       },
     });
-
     howlRef.current = sound;
     sound.play();
-  }, [currentIndex, enabled, hasSongs, getNextIndex]);
+
+    return () => {
+      howlRef.current?.stop();
+      howlRef.current?.unload();
+      howlRef.current = null;
+    };
+  }, [enabled, hasSongs, currentIndex, getNextIndex]);
 
   const label = !hasSongs ? (
     "No tracks"
   ) : enabled ? (
-    <TbMusicOff size={30} />
+    <VolumeOff size={30} />
   ) : (
-    <TbMusic size={30} />
+    <Music size={30} />
   );
 
   return (
@@ -93,6 +69,7 @@ export function MusicToggle() {
       type="button"
       onClick={() => hasSongs && setEnabled((v) => !v)}
       disabled={!hasSongs}
+      title={enabled ? "Pause background music" : "Play background music"}
       className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-foreground transition-colors hover-cta disabled:opacity-60 disabled:cursor-not-allowed"
     >
       {label}

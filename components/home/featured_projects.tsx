@@ -3,16 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSound } from "@/lib/useSound";
-import { FaReact } from "react-icons/fa";
-import { BiLogoTypescript } from "react-icons/bi";
 import {
-  TbBrandNextjs,
-  TbBrandRedux,
-  TbBrandReactNative,
-} from "react-icons/tb";
+  SiReact,
+  SiTypescript,
+  SiNextdotjs,
+  SiRedux,
+} from "react-icons/si";
+import { ArrowRight } from "lucide-react";
 import { getTagBorderColor, getTagTextColor } from "@/lib/helpers";
 import { SlideSection } from "../ui/slide_section";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 const featuredProjects = [
   {
@@ -37,15 +36,6 @@ const featuredProjects = [
     repoUrl: "https://github.com/OneDerry/landing-dashboard",
     thumbnail: "/thumbnail/dashboard-thumbnail.png",
   },
-  {
-    slug: "react-native-app",
-    title: "React Native app",
-    summary:
-      "A small mobile client that mirrors the web experience, reusing as much logic as possible.",
-    tags: ["React Native", "TypeScript"],
-    timeline: "Ongoing",
-    demoUrl: "#",
-  },
 ];
 
 const liveProjects = [
@@ -61,28 +51,58 @@ const liveProjects = [
     thumbnail: "/c1.png",
   },
   {
+    slug: "grey-auction",
+    title: "Grey Auction",
+    summary:
+      "A modern auction platform designed for seamless bidding and real-time updates, leveraging a robust tech stack for reliability.",
+    tags: ["Next.js", "TypeScript", "Redux"],
+    timeline: "Ongoing",
+    demoUrl: "",
+    thumbnail: "/auction_home.png",
+  },
+  {
     slug: "riser-school",
     title: "Riser School",
     summary:
-      "A compact dashboard surface for operations teams, with clear information hierarchy and table-heavy UI.",
+      "A comprehensive learning management platform designed to support student progress and administrative efficiency. Features include intuitive course management and a modern web experience.",
     tags: ["React", "TypeScript"],
     timeline: "Completed",
     demoUrl: "https://riserschool.com.ng/",
     repoUrl: "https://github.com/OneDerry/riser",
     thumbnail: "/riser.png",
   },
+  {
+    slug: "sero",
+    title: "Sero-revamp",
+    summary: "Zero sugar, Full flavor",
+    tags: ["Next.js", "TypeScript", "Redux"],
+    timeline: "Completed",
+    demoUrl: "https://sero-creative.vercel.app/",
+    repoUrl: "https://github.com/OneDerry/SERO-revamp",
+    thumbnail: "/sero_home.png",
+  },
+
+  {
+    slug: "selas",
+    title: "Selas",
+    summary:
+      "A student marketplace app enabling students to buy, sell, and trade items within their campus community. Features a safe, user-friendly platform for listings, messaging, and easy campus-focused commerce.",
+    tags: ["React Native", "TypeScript"],
+    timeline: "Ongoing",
+    demoUrl: "#",
+  },
 ];
 
 function getTagIcon(tag: string) {
   const normalized = tag.toLowerCase();
 
-  if (normalized.includes("next")) return <TbBrandNextjs className="h-4 w-4" />;
-  if (normalized.includes("redux")) return <TbBrandRedux className="h-4 w-4" />;
+  if (normalized.includes("next")) return <SiNextdotjs className="h-4 w-4" />;
+  if (normalized.includes("redux")) return <SiRedux className="h-4 w-4" />;
   if (normalized.includes("react native"))
-    return <TbBrandReactNative className="h-4 w-4" />;
-  if (normalized.includes("react")) return <FaReact className="h-4 w-4" />;
+    return <SiReact className="h-4 w-4" />;
+  if (normalized.includes("react")) return <SiReact className="h-4 w-4" />;
   if (normalized.includes("type"))
-    return <BiLogoTypescript className="h-4 w-4" />;
+    return <SiTypescript className="h-4 w-4" />;
 
   return null;
 }
@@ -205,8 +225,8 @@ export function FeaturedProjects() {
                   index === 0
                     ? "border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]"
                     : index === 1
-                    ? "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]"
-                    : "border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]"
+                      ? "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]"
+                      : "border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]"
                 }`}
               >
                 <div className="space-y-5">
@@ -295,7 +315,7 @@ export function FeaturedProjects() {
           onClick={playClick}
           className="w-fit rounded-lg border border-border bg-card px-6 py-2 flex items-center gap-2"
         >
-          View Projects <FaArrowRightLong />
+          View Projects <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </main>
