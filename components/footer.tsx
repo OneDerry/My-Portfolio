@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 import Link from "next/link";
 import { useSound } from "@/lib/useSound";
 
@@ -55,7 +54,7 @@ export function Footer() {
                 GitHub
               </Link>
               <Link
-                href="https://www.linkedin.com/in/mesiri-olomu-0a4403153/"
+                href="https://www.linkedin.com/in/mesiri-olomu/"
                 onClick={playClick}
                 className="transition-colors hover:text-foreground"
               >
