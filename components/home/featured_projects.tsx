@@ -38,7 +38,7 @@ const liveProjects = [
     slug: "change-for-humanity",
     title: "Change For Humanity",
     summary:
-      "A minimal storefront focused on performance, predictable state management, and a clean checkout flow.",
+      "A nonprofit platform connecting donors with impactful humanitarian causes worldwide.",
     tags: ["React", "Next.js", "TypeScript", "Redux"],
     timeline: "Completed",
     demoUrl: "https://changeforhumanity.org/",
@@ -122,12 +122,12 @@ export function FeaturedProjects() {
                 key={project.slug}
                 className={`grid gap-4 rounded-md shadow-accent-foreground border bg-card px-4 py-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1.4fr)] md:px-6 md:py-5 hover-card ${
                   [
-                    "border-orange-400/70 shadow-[0_0_2px_rgba(251,146,60,0.25)]", // 4: Orange
-                    "border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]", // 0: Blue
-                    "border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]", // 2: Violet
-                    "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]", // 1: Emerald
-                    "border-cyan-400/70 shadow-[0_0_2px_rgba(34,211,238,0.25)]", // 5: Cyan
-                    "border-pink-500/60 shadow-[0_0_2px_rgba(236,72,153,0.3)]", // 3: Pink
+                    "border-orange-400/70 shadow-[0_0_2px_rgba(251,146,60,0.25)]",
+                    "border-blue-500/60 shadow-[0_0_2px_rgba(59,130,246,0.3)]",
+                    "border-violet-500/60 shadow-[0_0_2px_rgba(139,92,246,0.3)]",
+                    "border-emerald-500/60 shadow-[0_0_2px_rgba(16,185,129,0.3)]",
+                    "border-cyan-400/70 shadow-[0_0_2px_rgba(34,211,238,0.25)]",
+                    "border-pink-500/60 shadow-[0_0_2px_rgba(236,72,153,0.3)]",
                   ][index % 6]
                 }`}
               >
