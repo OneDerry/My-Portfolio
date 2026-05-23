@@ -57,6 +57,13 @@ const projects = [
       "A real-time auction marketplace where buyers compete in live bids and sellers reach genuine buyers — with dedicated dashboards for buyers, sellers, and admins.",
     tags: ["Next.js", "TypeScript", "Redux"],
   },
+  {
+    slug: "nsimis",
+    title: "NSIMIS",
+    summary:
+      "A production web platform delivering a focused, responsive experience for its users.",
+    tags: ["Next.js", "TypeScript"],
+  },
   // {
   //   slug: "react-native-app",
   //   title: "React Native app",

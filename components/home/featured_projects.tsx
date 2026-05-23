@@ -39,11 +39,21 @@ const liveProjects = [
     title: "Change For Humanity",
     summary:
       "A nonprofit platform connecting donors with impactful humanitarian causes worldwide.",
-    tags: ["React", "Next.js", "TypeScript", "Redux"],
+    tags: ["React", "TypeScript", "Redux"],
     timeline: "Completed",
     demoUrl: "https://changeforhumanity.org/",
     repoUrl: "",
     thumbnail: "/c1.png",
+  },
+  {
+    slug: "nsimis",
+    title: "NSIMIS",
+    summary:
+      "Multi-role government monitoring platform with offline-first field reporting and a dynamic scoring engine.",
+    tags: ["Next.js", "TypeScript", "Redux"],
+    timeline: "Completed",
+    demoUrl: "https://nsimis.com",
+    thumbnail: "/simis1.png",
   },
   {
     slug: "grey-auction",
@@ -60,7 +70,7 @@ const liveProjects = [
     title: "Riser School",
     summary:
       "A comprehensive learning management platform designed to support student progress and administrative efficiency. Features include intuitive course management and a modern web experience.",
-    tags: ["React", "TypeScript"],
+    tags: ["React", "TypeScript", "Redux"],
     timeline: "Completed",
     demoUrl: "https://riserschool.com.ng/",
     repoUrl: "https://github.com/OneDerry/riser",
@@ -76,7 +86,6 @@ const liveProjects = [
     repoUrl: "https://github.com/OneDerry/SERO-revamp",
     thumbnail: "/sero_home.png",
   },
-
   {
     slug: "selas",
     title: "Selas",

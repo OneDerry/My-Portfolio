@@ -358,6 +358,51 @@ const projects: Projects = {
       "Styling": "CSS Modules, SVG transitions",
     },
   },
+  "nsimis": {
+    title: "NSIMIS",
+    timeline: "2024–2025",
+    tagline:
+      "Multi-role government monitoring platform with offline-first field reporting and a dynamic scoring engine.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    demoUrl: "https://nsimis.com",
+    repoUrl: "",
+    thumbnail: "/simis1.png",
+    img1: "/simis2.png",
+    img2: "/simis3.png",
+    img3: "/simis4.png",
+    overview:
+      "NSIMIS (Social Intervention Monitoring Information System) is a Nigerian government platform built to oversee national social programs like GEEP and N-Power. It connects three tiers of users — National Coordinators who own the whole system, Program Managers who run individual programs, and Independent Monitors collecting data in the field — into a single workflow for assignment, reporting, review, and performance tracking.",
+    problem: [
+      "Social programs span every Nigerian state and LGA, but there was no unified system to assign field workers, capture beneficiary visits, and roll those reports up into a national performance view.",
+      "Independent Monitors operate in low-connectivity rural areas, so reports needed to be capturable offline and synced opportunistically without losing GPS or photo evidence.",
+      "Each program defines its own assessment criteria — questions, scoring weights, answer types — so the platform needed a dynamic program/category/question builder rather than hard-coded forms.",
+      "The chain of accountability (submit → review → query → resubmit, plus query/removal requests raised against personnel) required clear role-based permissions and an audit trail across two layers of approval.",
+    ],
+    solution: [
+      "Built a role-aware web app with three permission tiers — NC, NPM, IM — each scoped to what they're allowed to see: NC sees every program and state, NPM sees only their program, IM sees only their assigned LGA.",
+      "Designed a dynamic program model: a National Coordinator creates a Program, then Categories, then Questions with answer types (Yes/No, Number, Text, Date, Multichoice) and point weights, so each program ships with its own scorecard.",
+      "Implemented an offline-first IM flow — reports queue locally with captured GPS coordinates and a beneficiary photo, then auto-sync once the device regains connectivity, with per-report success/failure feedback on resync.",
+      "Wired the full review lifecycle: IM submits → Pending → NPM approves or queries → if queried, IM resubmits → back to Pending. NPM can also raise Query or Removal requests against an IM, which the NC adjudicates with required justification notes; both parties are notified automatically.",
+      "Added bulk beneficiary onboarding via .xlsx upload with per-row validation feedback, and rolled-up dashboards that grade State (≥80% top / 50–79% average / <50% off-track) and LGA performance against tiered thresholds.",
+    ],
+    learning:
+      "Designing for three distinct personas under a single data model — and making sure offline field workers, mid-tier reviewers, and national administrators all see a coherent, properly scoped slice of the same system — pushed me to think carefully about permissions, data scoping, and graceful degradation when the network isn't there.",
+    keyFeatures: [
+      "Three-role access control: National Coordinator, Program Manager, Independent Monitor — each with its own scoped views.",
+      "Dynamic program builder: Programs → Categories → weighted Questions with five answer types.",
+      "Offline-first field reports with GPS capture, beneficiary photo, and queued sync when connectivity returns.",
+      "Report review lifecycle: Approve / Query / Resubmit, with per-report status (Pending, Approved, Queried).",
+      "Approval-request system for personnel actions (Query or Removal) with NC adjudication and required notes.",
+      "Bulk beneficiary import via Excel (.xlsx) with per-row validation and error feedback.",
+      "Performance dashboards rating State and LGA results against tiered thresholds (top / average / off-track).",
+      "Self-serve auth: login by email, username, or SIMIS ID; OTP-based password reset; in-app profile updates.",
+    ],
+    techStack: {
+      "UI layer": "Next.js, TypeScript",
+      "Styling": "Tailwind CSS",
+      "Offline sync": "Client-side queue with auto-resync",
+    },
+  },
 } as const;
 
 type Slug = keyof typeof projects;
