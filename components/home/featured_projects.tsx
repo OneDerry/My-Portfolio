@@ -40,9 +40,9 @@ const liveProjects = [
     summary: "The next generation marketplace for skilled services.",
     tags: ["React", "TypeScript", "Redux"],
     timeline: "Completed",
-    demoUrl: "https://www.serverse.co.uk/",
+    demoUrl: "https://staging.serverse.co.uk/",
     repoUrl: "",
-    thumbnail: "/c1.png",
+    thumbnail: "/serverse.png",
   },
   {
     slug: "change-for-humanity",

@@ -107,12 +107,12 @@ const projects: Projects = {
     timeline: "2026-Present",
     tagline: "The next generation marketplace for skilled services.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    demoUrl: "https://www.serverse.co.uk",
+    demoUrl: "https://staging.serverse.co.uk/",
     repoUrl: "",
-    thumbnail: "/c1.png",
-    img1: "/c2.png",
-    img2: "/c3.png",
-    img3: "/c4.png",
+    thumbnail: "/serverse.png",
+    img1: "/serverse1.png",
+    img2: "/serverse2.png",
+    img3: "/serverse3.png",
 
     overview:
       "Serverse connects skilled professionals with customers through one trusted digital platform — making it simple to discover, book, and pay for great local work.",
