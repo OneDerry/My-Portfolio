@@ -35,6 +35,16 @@ const featuredProjects = [
 
 const liveProjects = [
   {
+    slug: "serverse",
+    title: "Serverse",
+    summary: "The next generation marketplace for skilled services.",
+    tags: ["React", "TypeScript", "Redux"],
+    timeline: "Completed",
+    demoUrl: "https://www.serverse.co.uk/",
+    repoUrl: "",
+    thumbnail: "/c1.png",
+  },
+  {
     slug: "change-for-humanity",
     title: "Change For Humanity",
     summary:

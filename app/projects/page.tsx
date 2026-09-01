@@ -9,6 +9,13 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    slug: "serverse",
+    title: "Serverse",
+    summary:
+      "Serverse connects skilled professionals with customers through one trusted digital platform — making it simple to discover, book, and pay for great local work.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Redux"],
+  },
+  {
     slug: "change-for-humanity",
     title: "Change For Humanity",
     summary:

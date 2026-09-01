@@ -65,8 +65,8 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "React, TypeScript, Next.js",
-      "State": "Redux Toolkit, RTK Query",
-      "Styling": "Tailwind CSS, shadcn/ui",
+      State: "Redux Toolkit, RTK Query",
+      Styling: "Tailwind CSS, shadcn/ui",
     },
   },
   "admin-dashboard": {
@@ -99,9 +99,60 @@ const projects: Projects = {
     techStack: {
       "UI layer": "React, TypeScript",
       "Data viz": "Charts, KPI cards",
-      "Layout": "Table-first, responsive sidebar",
+      Layout: "Table-first, responsive sidebar",
     },
   },
+  serverse: {
+    title: "Serverse",
+    timeline: "2026-Present",
+    tagline: "The next generation marketplace for skilled services.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    demoUrl: "https://www.serverse.co.uk",
+    repoUrl: "",
+    thumbnail: "/c1.png",
+    img1: "/c2.png",
+    img2: "/c3.png",
+    img3: "/c4.png",
+
+    overview:
+      "Serverse connects skilled professionals with customers through one trusted digital platform — making it simple to discover, book, and pay for great local work.",
+
+    problem: [
+      "Skilled professionals often rely on word of mouth and social media to attract customers, limiting their growth and visibility.",
+      "Customers struggle to find trusted local service providers, compare options, and book with confidence.",
+      "The booking, payment, and communication process is fragmented across multiple platforms.",
+      "Many independent professionals lack affordable digital tools to manage bookings, payments, and their online reputation.",
+    ],
+
+    solution: [
+      "Designed and developed a full-stack marketplace connecting skilled professionals with customers through a single trusted platform.",
+      "Built an end-to-end booking ecosystem with service discovery, appointment scheduling, secure payments, and user management.",
+      "Created dedicated dashboards for professionals to manage services, bookings, payments, and customer interactions.",
+      "Implemented a responsive, mobile-first architecture focused on performance, scalability, and an intuitive user experience.",
+    ],
+
+    learning:
+      "Building Serverse from scratch strengthened my full-stack development skills, from designing scalable database structures and backend APIs to creating a performant, production-ready frontend. It also gave me practical experience translating a business idea into a complete marketplace platform while balancing usability, scalability, security, and maintainability.",
+
+    keyFeatures: [
+      "Marketplace for discovering trusted local professionals.",
+      "Advanced search, filtering, and service categorization.",
+      "Appointment booking and scheduling system.",
+      "Secure online payment integration.",
+      "Professional dashboard for managing services and bookings.",
+      "Customer accounts with booking history.",
+      "Verified reviews and reputation system.",
+      "Responsive, mobile-first Progressive Web App (PWA).",
+    ],
+    techStack: {
+      Frontend: "Next.js, TypeScript",
+      Backend: "Laravel, PHP",
+      Database: "MySQL",
+      Styling: "Tailwind CSS",
+      Architecture: "REST API, SSR, Mobile-first, PWA",
+    },
+  },
+
   "change-for-humanity": {
     title: "Change For Humanity",
     timeline: "2023-2025",
@@ -143,8 +194,8 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "React, TypeScript, Vite",
-      "Styling": "Tailwind CSS",
-      "Approach": "Mobile-first, SPA",
+      Styling: "Tailwind CSS",
+      Approach: "Mobile-first, SPA",
     },
   },
   "riser-school": {
@@ -184,8 +235,8 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "React, TypeScript, Vite",
-      "Payments": "Paystack",
-      "Styling": "Tailwind CSS",
+      Payments: "Paystack",
+      Styling: "Tailwind CSS",
     },
   },
   "coffee-website": {
@@ -225,11 +276,11 @@ const projects: Projects = {
     timeline: "2025",
     techStack: {
       "UI layer": "React, TypeScript, Next.js",
-      "Styling": "Tailwind CSS",
-      "Approach": "SSR, product-first layout",
+      Styling: "Tailwind CSS",
+      Approach: "SSR, product-first layout",
     },
   },
-  "selas": {
+  selas: {
     title: "Selas",
     timeline: "Ongoing",
     tagline:
@@ -266,9 +317,9 @@ const projects: Projects = {
       "Cross-platform support for iOS and Android.",
     ],
     techStack: {
-      "Framework": "React Native, TypeScript",
-      "Platform": "iOS, Android (Expo)",
-      "Features": "Real-time messaging, image uploads",
+      Framework: "React Native, TypeScript",
+      Platform: "iOS, Android (Expo)",
+      Features: "Real-time messaging, image uploads",
     },
   },
   "grey-auction": {
@@ -311,11 +362,11 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "Next.js, TypeScript",
-      "State": "Redux Toolkit",
-      "Features": "Role-based dashboards, real-time bidding",
+      State: "Redux Toolkit",
+      Features: "Role-based dashboards, real-time bidding",
     },
   },
-  "sero": {
+  sero: {
     title: "Sero-revamp",
     timeline: "Completed",
     tagline:
@@ -354,11 +405,11 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "Next.js, TypeScript",
-      "State": "Redux Toolkit",
-      "Styling": "CSS Modules, SVG transitions",
+      State: "Redux Toolkit",
+      Styling: "CSS Modules, SVG transitions",
     },
   },
-  "nsimis": {
+  nsimis: {
     title: "NSIMIS",
     timeline: "2024–2025",
     tagline:
@@ -399,7 +450,7 @@ const projects: Projects = {
     ],
     techStack: {
       "UI layer": "Next.js, TypeScript",
-      "Styling": "Tailwind CSS",
+      Styling: "Tailwind CSS",
       "Offline sync": "Client-side queue with auto-resync",
     },
   },
@@ -655,29 +706,37 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </section>
 
         {/* Links */}
-        {(project.demoUrl && project.demoUrl !== "#" && project.demoUrl !== "") ||
-        (project.repoUrl && project.repoUrl !== "#" && project.repoUrl !== "") ? (
+        {(project.demoUrl &&
+          project.demoUrl !== "#" &&
+          project.demoUrl !== "") ||
+        (project.repoUrl &&
+          project.repoUrl !== "#" &&
+          project.repoUrl !== "") ? (
           <section className="space-y-3">
             <h2 className="text-base font-semibold tracking-tight text-foreground md:text-lg">
               Links
             </h2>
             <div className="flex flex-wrap gap-3 text-sm">
-              {project.demoUrl && project.demoUrl !== "#" && project.demoUrl !== "" && (
-                <Link
-                  href={project.demoUrl}
-                  className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  Live Build
-                </Link>
-              )}
-              {project.repoUrl && project.repoUrl !== "#" && project.repoUrl !== "" && (
-                <Link
-                  href={project.repoUrl}
-                  className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-                >
-                  GitHub repo
-                </Link>
-              )}
+              {project.demoUrl &&
+                project.demoUrl !== "#" &&
+                project.demoUrl !== "" && (
+                  <Link
+                    href={project.demoUrl}
+                    className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                  >
+                    Live Build
+                  </Link>
+                )}
+              {project.repoUrl &&
+                project.repoUrl !== "#" &&
+                project.repoUrl !== "" && (
+                  <Link
+                    href={project.repoUrl}
+                    className="rounded-md border border-border px-4 py-2 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                  >
+                    GitHub repo
+                  </Link>
+                )}
             </div>
           </section>
         ) : null}
