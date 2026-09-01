@@ -38,7 +38,7 @@ const liveProjects = [
     slug: "serverse",
     title: "Serverse",
     summary: "The next generation marketplace for skilled services.",
-    tags: ["React", "TypeScript", "Redux"],
+    tags: ["Next.js", "TypeScript", "Redux"],
     timeline: "Completed",
     demoUrl: "https://staging.serverse.co.uk/",
     repoUrl: "",
