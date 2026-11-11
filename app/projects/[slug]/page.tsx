@@ -470,15 +470,15 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Project · Frontend case study",
+      title: "Project · Case study",
     };
   }
 
   return {
-    title: `${project.title} · Frontend case study`,
+    title: `${project.title} · Case study`,
     description: project.tagline,
     openGraph: {
-      title: `${project.title} · Frontend case study`,
+      title: `${project.title} · Case study`,
       description: project.tagline,
       images: [{ url: project.thumbnail }],
     },

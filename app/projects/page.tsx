@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects – Mesiri Olomu",
   description:
-    "Selected frontend and React Native projects highlighting React, TypeScript, Redux, and UI architecture.",
+    "Selected full-stack, web, and React Native projects highlighting React, TypeScript, Redux, and software architecture.",
 };
 
 const projects = [

@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     type: "website",
     title: "Mesiri Olomu Portfolio",
     description:
-      "Frontend developer specializing in React, TypeScript, and modern web technologies.",
+      "Software engineer building full-stack products with React, TypeScript, and modern web technologies.",
     images: [{ url: "/MyProfilePic.JPG" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mesiri Olomu Portfolio",
     description:
-      "Frontend developer specializing in React, TypeScript, and modern web technologies.",
+      "Software engineer building full-stack products with React, TypeScript, and modern web technologies.",
   },
 };
 

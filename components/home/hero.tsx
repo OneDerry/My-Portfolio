@@ -71,15 +71,15 @@ export function Hero() {
           Mesiri Olomu
         </p>
         <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl">
-          Frontend Developer —
+          Software Engineer —
           <span className="ml-1 align-baseline text-primary">{stackText}</span>
           <span className="ml-1 inline-block h-5 w-[1.5px] translate-y-[2px] bg-primary/80 align-middle animate-pulse" />
         </h1>
         <p className="max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
           I build systems that make manual work effortless with modern React
           tooling, strong type-safety, and clear state management. This
-          portfolio is a snapshot of how I approach real-world frontend
-          problems.
+          portfolio is a snapshot of how I approach real-world software
+          problems, from the UI to the API.
         </p>
         <div className="flex flex-wrap gap-3">
           <a

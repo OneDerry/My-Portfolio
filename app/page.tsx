@@ -8,9 +8,9 @@ import { Contact } from "../components/home/contact";
 import Experience from "@/components/home/experience";
 
 export const metadata: Metadata = {
-  title: "Frontend Developer – Mesiri Olomu",
+  title: "Software Engineer – Mesiri Olomu",
   description:
-    "Portfolio of Mesiri Olomu, frontend developer focusing on React, TypeScript, Redux, and React Native.",
+    "Portfolio of Mesiri Olomu, software engineer building full-stack products with React, TypeScript, Redux, React Native, and Laravel.",
 };
 
 export default function Home() {

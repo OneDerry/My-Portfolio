@@ -15,8 +15,8 @@ export function Footer() {
               Let&apos;s work together
             </p>
             <p className="text-xs text-muted-foreground">
-              Always happy to chat about frontend architecture and design
-              systems.
+              Always happy to chat about software architecture, full-stack
+              products, and design systems.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
